@@ -1,8 +1,9 @@
+import { Container } from "@mui/material";
 
 export default function Home() {
   return (
-    <main>
-      pagina principal
-    </main>
+    <Container>
+      <p>Holanda</p>
+    </Container>
   )
 }

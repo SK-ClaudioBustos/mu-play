@@ -11,8 +11,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
+import LinkCustom from './LinkCustom';
 import NavigationBarContent from './NavigationBarContent';
-import Link from 'next/link';
 
 const settings = [
   {
@@ -65,11 +65,11 @@ function NavigationBar() {
             >
               {
                 settings.map(({ titulo, url }) => (
-                  <Link href={`/${url}`} key={url}>
-                    <MenuItem onClick={handleCloseUserMenu}>
+                  <MenuItem key={url} onClick={handleCloseUserMenu}>
+                    <LinkCustom href={`/${url}`} style={{ color: "#000"}}>
                       <Typography textAlign="center">{titulo}</Typography>
-                    </MenuItem>
-                  </Link>
+                    </LinkCustom>
+                  </MenuItem>
                 ))
               }
             </Menu>
