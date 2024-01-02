@@ -1,14 +1,12 @@
 import { Container, Typography } from "@mui/material"
 import { Ubuntu, Kanit } from 'next/font/google'
 
-const font1 = Ubuntu({ weight: "400", subsets: ['latin'] })
-const font2 = Kanit({ weight: "400", subsets: ['latin'] })
 const styles = {
   container: {
     backgroundColor: "#fff",
     height: "500px",
     marginTop: "35px",
-    marginBottom: "15px",
+    marginBottom: "35px",
     borderRadius: "15px",
     display: "flex",
     justifyContent: "left",
@@ -20,6 +18,9 @@ const styles = {
     color: "#000"
   }
 }
+
+const font1 = Ubuntu({ weight: "400", subsets: ['latin'] })
+const font2 = Kanit({ weight: "400", subsets: ['latin'] })
 
 const WelcomePanel = () => {
   return (
