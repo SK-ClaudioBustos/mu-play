@@ -10,9 +10,16 @@ import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
-import * as React from 'react';
 import LinkCustom from './LinkCustom';
 import NavigationBarContent from './NavigationBarContent';
+import { useState, MouseEvent } from 'react';
+
+const styles = {
+  appbar: { backgroundColor: "#116149" },
+  box: { flexGrow: 0 },
+  menu: { mt: '45px' },
+  iconButton: { p: 0 }
+}
 
 const settings = [
   {
@@ -26,9 +33,9 @@ const settings = [
 ];
 
 function NavigationBar() {
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+  const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+  const handleOpenUserMenu = (event: MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
   };
   const handleCloseUserMenu = () => {
@@ -36,19 +43,18 @@ function NavigationBar() {
   };
 
   return (
-    <AppBar sx={{ backgroundColor: "red" }} position="static">
+    <AppBar sx={styles.appbar} position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-
           <NavigationBarContent />
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={styles.box}>
             <Tooltip title="Mostrar opciones">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Claudio Bustos" src="public/img/perfil.jpg" />
+              <IconButton onClick={handleOpenUserMenu} sx={styles.iconButton}>
+                <Avatar alt="Claudio Bustos" src="img/perfil.jpg" />
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: '45px' }}
+              sx={styles.menu}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{

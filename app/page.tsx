@@ -1,9 +1,9 @@
-import { Container } from "@mui/material";
+import WelcomePanel from "./ui/WelcomePanel";
 
 export default function Home() {
   return (
-    <Container>
-      <p>Holanda</p>
-    </Container>
+    <>
+      <WelcomePanel/>
+    </>
   )
 }
