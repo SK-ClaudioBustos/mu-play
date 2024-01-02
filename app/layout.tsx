@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import NavigationBar from './ui/NavigationBar'
 import './globals.css'
+import FooterCustom from './ui/FooterCustom'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'MuPlay',
@@ -17,9 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={inter.className}>
+      <body>
         <NavigationBar/>
         {children}
+        <FooterCustom />
       </body>
     </html>
   )
