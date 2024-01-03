@@ -1,5 +1,4 @@
 import { Container, Typography } from "@mui/material"
-import { Ubuntu, Kanit } from 'next/font/google'
 
 const styles = {
   container: {
@@ -19,17 +18,14 @@ const styles = {
   }
 }
 
-const font1 = Ubuntu({ weight: "400", subsets: ['latin'] })
-const font2 = Kanit({ weight: "400", subsets: ['latin'] })
-
 const WelcomePanel = () => {
   return (
     <Container sx={styles.container}>
       <div>
-      <Typography className={font2.className} sx={styles.text} fontSize={50}>
+      <Typography  sx={styles.text} fontSize={50}>
           Bienvenido a mi tercer proyecto
       </Typography>
-      <Typography className={font1.className} sx={styles.text} fontSize={15}>
+      <Typography sx={styles.text} fontSize={15}>
           Se trata de una pagina web similar a Spotify o Deezer
       </Typography>
       </div>

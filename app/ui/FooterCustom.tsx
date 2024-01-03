@@ -5,7 +5,6 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import IconButton from "@mui/material/IconButton";
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import { Kanit } from "next/font/google";
 
 const styles = {
     box: {
@@ -27,8 +26,6 @@ const styles = {
     }
 }
 
-const kanit = Kanit({ weight: "400", subsets: ['latin'] })
-
 const FooterCustom = () => {
     return (
         <Box sx={styles.box}>
@@ -45,7 +42,7 @@ const FooterCustom = () => {
                     </IconButton>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <Typography className={kanit.className} sx={styles.text}>
+                    <Typography sx={styles.text}>
                         Claudio Bustos(2024) &#169;
                     </Typography>
                 </Grid>
