@@ -11,11 +11,11 @@ const styles = {
     display: "flex",
     justifyContent: "left",
     alignItems: "center",
-    background: "linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(17,97,73,1) 100%)"
+    background: "linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(24,136,103,1) 60%, rgba(17,97,73,1) 100%)"
   },
   text: { 
     display: "block",
-    color: "#000"
+    color: "#fff"
   }
 }
 
