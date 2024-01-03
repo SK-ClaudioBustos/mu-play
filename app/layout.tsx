@@ -3,6 +3,9 @@ import type { Metadata } from 'next';
 import theme from "./theme";
 import Layout from './ui/Layout';
 import './globals.css';
+import { Kanit } from "next/font/google";
+
+const font = Kanit({ weight: "400", subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'MuPlay',
@@ -16,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body>
+      <body className={font.className}>
         <ThemeProvider theme={theme}>
           <Layout>
             {children}
