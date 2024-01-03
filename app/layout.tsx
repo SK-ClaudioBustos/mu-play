@@ -1,9 +1,8 @@
-import type { Metadata } from 'next'
-import NavigationBar from './ui/NavigationBar'
-import FooterCustom from './ui/FooterCustom'
 import { ThemeProvider } from "@mui/material/styles";
+import type { Metadata } from 'next';
 import theme from "./theme";
-import './globals.css'
+import Layout from './ui/Layout';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'MuPlay',
@@ -19,9 +18,9 @@ export default function RootLayout({
     <html lang="es">
       <body>
         <ThemeProvider theme={theme}>
-          <NavigationBar />
-          {children}
-          <FooterCustom />
+          <Layout>
+            {children}
+          </Layout>
         </ThemeProvider>
       </body>
     </html>
