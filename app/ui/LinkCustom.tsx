@@ -9,7 +9,7 @@ interface ILinkCustomProps {
 const LinkCustom = (props: ILinkCustomProps) => {
     const { href, style, children } = props;
     return (
-        <Link style={{ textDecoration: "none", ...style }} href={href} >
+        <Link style={{ ...style }} href={href} >
             {children}
         </Link>
     )

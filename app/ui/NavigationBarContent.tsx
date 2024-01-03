@@ -2,7 +2,7 @@ import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Box, Button, IconButton, Menu, MenuItem, Typography } from "@mui/material";
 import React from "react";
-import LinkCustom from "./LinkCustom";
+import Link from 'next/link';
 
 const pages = [
     {
@@ -45,18 +45,20 @@ const NavigationBarContent = () => {
                     textDecoration: 'none',
                 }}
             >
-                MuPlay
+                <Link href="/">
+                    MuPlay
+                </Link>
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                 {pages.map(({titulo, url}) => (
-                    <LinkCustom href={`/${url}`} key={url}>
+                    <Link href={`/${url}`} key={url}>
                         <Button
                             onClick={handleCloseNavMenu}
                             sx={{ my: 2, color: 'white', display: 'block' }}
                         >
                             {titulo}
                         </Button>
-                    </LinkCustom>
+                    </Link>
                 ))}
             </Box>
 
@@ -90,11 +92,11 @@ const NavigationBarContent = () => {
                     }}
                 >
                     {pages.map(({titulo, url}) => (
-                        <LinkCustom href={`/${url}`} key={url}>
+                        <Link href={`/${url}`} key={url}>
                             <MenuItem >
                                 <Typography textAlign="center">{titulo}</Typography>
                             </MenuItem>
-                        </LinkCustom>
+                        </Link>
                     ))}
                 </Menu>
             </Box>
