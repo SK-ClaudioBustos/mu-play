@@ -1,6 +1,6 @@
 import { Avatar, Box, Container, Grid } from "@mui/material";
 import { grey } from "@mui/material/colors";
-import LabelCustom from "../ui/LabelCustom";
+import LabelCustom from "../ui/components/LabelCustom";
 
 const Page = () => {
   const items = [

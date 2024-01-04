@@ -1,7 +1,16 @@
+import { Container } from "@mui/material";
+import BarraBusqueda from "../ui/components/BarraBusqueda";
+import ContentBox from "../ui/components/ContentBox";
+
 
 const Page = () => {
   return (
-    <div>pagina favoritas</div>
+    <Container>
+      <BarraBusqueda />
+      <div>
+        <ContentBox count={10} word="Slipknot" />
+      </div>
+    </Container>
   )
 }
 

@@ -1,5 +1,5 @@
-import FooterCustom from "./FooterCustom"
-import NavigationBar from "./NavigationBar"
+import FooterCustom from "./components/FooterCustom"
+import NavigationBar from "./components/NavigationBar"
 
 interface ILayoutProps {
     children: React.ReactNode
