@@ -6,13 +6,14 @@ import Link from 'next/link';
 
 const pages = [
     {
+        titulo: 'Descubrir',
+        url: "descubrir"
+    },
+    {
         titulo: 'Mis Listas',
         url: "mis-listas"
     },
-    {
-        titulo: 'Favoritas',
-        url: "favoritas"
-    },
+    
     {
         titulo: 'Sobre',
         url: "sobre"
