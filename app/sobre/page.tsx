@@ -39,7 +39,7 @@ const Page = () => {
             <List>
                 <ListItem>
                   <ListItemIcon>
-                    <FilterFramesIcon />
+                    <DashboardIcon />
                   </ListItemIcon>
                   <ListItemText
                     primary="MUI Component Library"

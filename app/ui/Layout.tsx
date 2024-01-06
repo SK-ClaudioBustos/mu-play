@@ -1,4 +1,4 @@
-import FooterCustom from "./components/FooterCustom"
+import FooterCustom from "./utils/FooterCustom"
 import NavigationBar from "./components/NavigationBar"
 
 interface ILayoutProps {

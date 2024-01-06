@@ -1,24 +1,16 @@
 "use client"
 
-import { styled, alpha } from '@mui/material/styles';
-import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
+import InputBase from '@mui/material/InputBase';
+import { styled } from '@mui/material/styles';
 
 const Search = styled('div')(({ theme }) => ({
-    border: "1px solid #c1c2c3",
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha("#fff", 0.5),
-    '&:hover': {
-        backgroundColor: alpha("#fff", 0.9),
-    },
-    '&:focus': {
-        backgroundColor: alpha("#fff", 1),
-    },
+    backgroundColor: "#fff",
     width: '100%',
     margin: "20px 0",
     [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(1),
         width: 'auto',
     },
 }));

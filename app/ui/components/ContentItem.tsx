@@ -3,7 +3,7 @@ import CardActionArea from "@mui/material/CardActionArea"
 import CardContent from "@mui/material/CardContent"
 import CardMedia from "@mui/material/CardMedia"
 import Grid from "@mui/material/Grid"
-import LabelCustom from "./LabelCustom"
+import LabelCustom from "../utils/LabelCustom"
 import Image from "next/image"
 
 interface IContentItemProps {
