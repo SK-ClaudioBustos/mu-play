@@ -10,7 +10,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
-import LinkCustom from './LinkCustom';
+import LinkCustom from '../utils/LinkCustom';
 import NavigationBarContent from './NavigationBarContent';
 import { useState, MouseEvent } from 'react';
 

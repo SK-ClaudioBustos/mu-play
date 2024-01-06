@@ -2,10 +2,15 @@ import { Box, Container, Grid, List, ListItem, ListItemIcon, ListItemText, Typog
 import ChangeHistoryIcon from '@mui/icons-material/ChangeHistory';
 import FilterFramesIcon from '@mui/icons-material/FilterFrames';
 import DashboardIcon from '@mui/icons-material/Dashboard';
+
+const styles = {
+  box: { height: "400px", backgroundColor: "#0AAD74", margin: "20px 0", borderRadius: "5px", padding: "20px 80px" }
+}
+
 const Page = () => {
   return (
     <Container>
-      <Box sx={{ height: "400px", backgroundColor: "#0AAD74", margin: "20px 0", borderRadius: "5px", padding: "20px 80px" }}>
+      <Box sx={styles.box}>
         <Grid container>
           <Grid item xs={12}>
             <Typography fontSize={20}>
@@ -39,7 +44,7 @@ const Page = () => {
             <List>
                 <ListItem>
                   <ListItemIcon>
-                    <FilterFramesIcon />
+                    <DashboardIcon />
                   </ListItemIcon>
                   <ListItemText
                     primary="MUI Component Library"

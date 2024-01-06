@@ -1,6 +1,12 @@
 import { Avatar, Box, Container, Grid } from "@mui/material";
 import { grey } from "@mui/material/colors";
-import LabelCustom from "../ui/LabelCustom";
+import LabelCustom from "../ui/utils/LabelCustom";
+
+const styles = {
+  box: { padding: 10, backgroundColor: "#fff", margin: "20px 0", borderRadius: "5px", display: "flex", justifyContent: "center" },
+  grid: { maxWidth: "500px" },
+  avatar: { bgcolor: grey[500], height: 120, width: 120, marginBottom: "10px" }
+}
 
 const Page = () => {
   const items = [
@@ -27,11 +33,11 @@ const Page = () => {
   ];
   return (
     <Container>
-      <Box sx={{ padding: 10, backgroundColor: "#fff", margin: "20px 0", borderRadius: "5px", display: "flex", justifyContent: "center" }}>
-        <Grid container sx={{ maxWidth: "500px" }} spacing={0} rowSpacing={{ xs: 1, sm: 2, md: 6 }}>
+      <Box sx={styles.box}>
+        <Grid container sx={styles.grid} spacing={0} rowSpacing={{ xs: 1, sm: 2, md: 6 }}>
 
           <Grid item xs={12} >
-            <Avatar sx={{ bgcolor: grey[500], height: 120, width: 120, marginBottom: "10px" }} alt="Claudio Bustos" src="img/perfil.jpg" />
+            <Avatar sx={styles.avatar} alt="Claudio Bustos" src="img/perfil.jpg" />
           </Grid>
 
           {
