@@ -8,11 +8,15 @@ interface SectionProps {
     content: SectionContentData[]
 }
 
+const styles = {
+    box: { backgroundColor: "#fff", borderRadius: "5px", paddingLeft: "10px", height: "70px", display: "flex", alignItems: "center", marginTop: "100px" }
+}
+
 const Section = (props: SectionProps) => {
     const { title, content } = props;
     return (
         <>
-            <Box sx={{ backgroundColor: "#fff", borderRadius: "5px", paddingLeft: "10px", height: "70px", display: "flex", alignItems: "center", marginTop: "100px" }}>
+            <Box sx={styles.box}>
                 <Typography fontSize={35}>
                     {title}
                 </Typography>

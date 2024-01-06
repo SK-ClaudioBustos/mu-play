@@ -10,7 +10,10 @@ interface IContentItemProps {
     song: string
     artist: string
     image: string
-    album?: string
+}
+
+const styles = {
+    grid: { display: "flex", justifyContent: "center" }
 }
 
 const ContentItem = (props: IContentItemProps) => {
@@ -18,10 +21,9 @@ const ContentItem = (props: IContentItemProps) => {
         song,
         artist,
         image,
-        album
     } = props;
     return (
-        <Grid item xs={3} sx={{ display: "flex", justifyContent: "center" }}>
+        <Grid item xs={3} sx={styles.grid}>
             <Card sx={{ maxWidth: 200 }}>
                 <CardActionArea>
                     <Image

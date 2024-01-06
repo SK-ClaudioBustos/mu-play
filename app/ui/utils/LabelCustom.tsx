@@ -11,10 +11,13 @@ interface ILabelCustomProps {
     type?: string
 }
 
+const styles = {
+   box: { margin: 0, padding: 0 }
+}
 const LabelCustom = (props: ILabelCustomProps) => {
     const { primary, secondary, color, type } = props;
     return (
-        <Box sx={{ margin: 0, padding: 0 }}>
+        <Box sx={styles.box}>
             <Typography fontSize={13} color={"#c1c2c3"}>
                 {secondary}
             </Typography>
