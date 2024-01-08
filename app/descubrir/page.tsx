@@ -1,5 +1,5 @@
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import BarraBusqueda from "../ui/components/BarraBusqueda";
 import Section from "../ui/components/Section";
 import { secciones } from '../ui/data/sections';
@@ -19,7 +19,7 @@ const styles = {
 
 const Page = () => {
   return (
-    <Container>
+    <>
       <BarraBusqueda />
       <Box sx={styles.box}>
         <Typography fontSize={50}>
@@ -34,7 +34,7 @@ const Page = () => {
           ))
         }
       </>
-    </Container>
+    </>
   )
 }
 
