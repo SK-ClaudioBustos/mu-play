@@ -1,6 +1,9 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+"use client"
+
+import { Box, Button, ButtonGroup, Grid, Modal, TextField, Typography } from "@mui/material";
 import ListaReproduccion from "../ui/components/ListaReproduccion";
 import AddBoxIcon from '@mui/icons-material/AddBox';
+import { useState } from "react";
 
 const styles = {
   box: {
@@ -19,6 +22,15 @@ const styles = {
   },
   button: {
     color: "#116149"
+  },
+  modal: {
+    position: 'absolute' as 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    p: 2,
   }
 }
 
@@ -51,10 +63,20 @@ const listas = [
 ]
 
 const Page = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleShow = () => {
+    setOpen(true);
+  }
+
+  const handleClose = () => {
+    setOpen(false);
+  }
+
   return (
     <Box sx={styles.box}>
-
       <Grid container>
+
         <Grid item xs={12}>
           <Grid container>
             <Grid item xs={6}>
@@ -63,12 +85,13 @@ const Page = () => {
               </Typography>
             </Grid>
             <Grid item xs={6} sx={styles.containerButton}>
-              <Button sx={styles.button} startIcon={<AddBoxIcon></AddBoxIcon>}>
+              <Button onClick={handleShow} sx={styles.button} startIcon={<AddBoxIcon></AddBoxIcon>}>
                 Agregar
               </Button>
             </Grid>
           </Grid>
         </Grid>
+        
         <>
           {
             listas.map((lista: any, key: number) => (
@@ -77,8 +100,55 @@ const Page = () => {
           }
         </>
       </Grid>
+      {
+        open &&
+        <ModalCustom open={open} handleClose={handleClose}/>
+      }
     </Box>
   )
+}
+
+interface IModalCustomProps {
+  open: boolean
+  handleClose: () => void
+}
+
+const ModalCustom = (props: IModalCustomProps) => {
+  const { open, handleClose } = props;
+  return (
+    <Modal
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="modal-modal-title"
+      aria-describedby="modal-modal-description"
+    >
+      <Box sx={styles.modal}>
+        <Grid container rowSpacing={3}>
+          <Grid item xs={12}>
+            <Typography>
+              Crear Lista de Reproducción
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <TextField fullWidth color="success" variant="standard" label="Nombre" required />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField fullWidth color="success" variant="standard" label="Descripción" />
+          </Grid>
+          <Grid item xs={12}>
+            <Box sx={styles.containerButton}>
+              <Button color="success" onClick={handleClose}>
+                Aceptar
+              </Button>
+              <Button color="error" onClick={handleClose}>
+                Cancelar
+              </Button>
+            </Box>
+          </Grid>
+        </Grid>
+      </Box>
+    </Modal>
+  );
 }
 
 export default Page
