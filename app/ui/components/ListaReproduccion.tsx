@@ -1,10 +1,19 @@
+"use client"
+
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
+import StarIcon from '@mui/icons-material/Star';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
 import Image from "next/image";
+import { useState } from "react";
+
 interface IListaReproduccionProps {
-    nombre: string,
+    nombre: string
     imagen: string
+    starred: boolean
     descripcion?: string
 }
 
@@ -26,18 +35,32 @@ const styles = {
 }
 
 const ListaReproduccion = (props: IListaReproduccionProps) => {
-    const { nombre, imagen, descripcion } = props;
+    const { nombre, imagen, starred, descripcion } = props;
+    const [star, setStar] = useState(starred);
     return (
         <Grid item xs={12} sx={styles.item}>
             <Grid container>
                 <Grid item xs={2} sx={styles.containerImage}>
                     <Image src={imagen} width={120} height={120} priority alt="portada lista de reproducion" />
                 </Grid>
-                <Grid item xs={10} sx={styles.containerText}>
+                <Grid item xs={8} sx={styles.containerText}>
                     <Box>
                         <Typography fontSize={20}>{nombre}</Typography>
                         <Typography fontSize={16}>{descripcion}</Typography>
                     </Box>
+                </Grid>
+                <Grid item xs={2} sx={styles.containerText}>
+                    <IconButton>
+                        <DeleteIcon color="error"></DeleteIcon>
+                    </IconButton>
+                    <IconButton onClick={() => setStar(!star)}>
+                        {
+                            star
+                                ? <StarIcon color="success" />
+                                : <StarBorderIcon color="success"/>
+
+                        }
+                    </IconButton>
                 </Grid>
             </Grid>
         </Grid>
