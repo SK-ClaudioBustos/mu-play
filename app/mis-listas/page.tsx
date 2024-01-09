@@ -25,6 +25,7 @@ const styles = {
   },
   modal: {
     position: 'absolute' as 'absolute',
+    borderRadius: "5px",
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
@@ -91,7 +92,7 @@ const Page = () => {
             </Grid>
           </Grid>
         </Grid>
-        
+
         <>
           {
             listas.map((lista: any, key: number) => (
