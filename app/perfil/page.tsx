@@ -1,4 +1,4 @@
-import { Avatar, Box, Grid } from "@mui/material";
+import { Avatar, Box, Container, Grid } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import LabelCustom from "../ui/utils/LabelCustom";
 
@@ -32,23 +32,25 @@ const Page = () => {
     },
   ];
   return (
-    <Box sx={styles.box}>
-      <Grid container sx={styles.grid} spacing={0} rowSpacing={{ xs: 1, sm: 2, md: 6 }}>
+    <Container>
+      <Box sx={styles.box}>
+        <Grid container sx={styles.grid} spacing={0} rowSpacing={{ xs: 1, sm: 2, md: 6 }}>
 
-        <Grid item xs={12} >
-          <Avatar sx={styles.avatar} alt="Claudio Bustos" src="img/perfil.jpg" />
+          <Grid item xs={12} >
+            <Avatar sx={styles.avatar} alt="Claudio Bustos" src="img/perfil.jpg" />
+          </Grid>
+
+          {
+            items.map(({ label, text }, key) => (
+              <Grid item xs={label === "Correo Electrónico" ? 12 : 6} key={key}>
+                <LabelCustom primary={text} secondary={label} color={label === "Tipo de cuenta" ? "#ffc600" : "#000"} type={label === "Contraseña" ? "pass" : ""} />
+              </Grid>
+            ))
+          }
+
         </Grid>
-
-        {
-          items.map(({ label, text }, key) => (
-            <Grid item xs={label === "Correo Electrónico" ? 12 : 6} key={key}>
-              <LabelCustom primary={text} secondary={label} color={label === "Tipo de cuenta" ? "#ffc600" : "#000"} type={label === "Contraseña" ? "pass" : ""} />
-            </Grid>
-          ))
-        }
-
-      </Grid>
-    </Box>
+      </Box>
+    </Container>
   )
 }
 

@@ -1,8 +1,8 @@
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Box, Button, IconButton, Menu, MenuItem, Typography } from "@mui/material";
-import React from "react";
 import Link from 'next/link';
+import { MouseEvent, useState } from "react";
 
 const styles = {
     icon1: { display: { xs: 'none', md: 'flex' }, mr: 1 },
@@ -16,7 +16,7 @@ const styles = {
         textDecoration: 'none',
     },
     box1: { flexGrow: 1, display: { xs: 'none', md: 'flex' } },
-    button1: { my: 2, color: 'white', display: 'block' },
+    link: { my: 2, color: 'white', display: 'block' },
     box2: { flexGrow: 1, display: { xs: 'flex', md: 'none' } },
     menu: {
         display: { xs: 'block', md: 'none' }
@@ -36,6 +36,10 @@ const styles = {
 
 const pages = [
     {
+        titulo: 'Inicio',
+        url: "/"
+    },
+    {
         titulo: 'Descubrir',
         url: "descubrir"
     },
@@ -43,7 +47,6 @@ const pages = [
         titulo: 'Mis Listas',
         url: "mis-listas"
     },
-    
     {
         titulo: 'Sobre',
         url: "sobre"
@@ -51,12 +54,10 @@ const pages = [
 ];
 
 const NavigationBarContent = () => {
-    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-
-    const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+    const handleOpenNavMenu = (event: MouseEvent<HTMLElement>) => {
         setAnchorElNav(event.currentTarget);
     };
-
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
@@ -77,7 +78,7 @@ const NavigationBarContent = () => {
                     <Link href={`/${url}`} key={url}>
                         <Button
                             onClick={handleCloseNavMenu}
-                            sx={styles.button1}
+                            sx={ styles.link }
                         >
                             {titulo}
                         </Button>

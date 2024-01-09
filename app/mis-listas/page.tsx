@@ -1,6 +1,6 @@
 "use client"
 
-import { Box, Button, ButtonGroup, Grid, Modal, TextField, Typography } from "@mui/material";
+import { Box, Button, ButtonGroup, Container, Grid, Modal, TextField, Typography } from "@mui/material";
 import ListaReproduccion from "../ui/components/ListaReproduccion";
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import { useState } from "react";
@@ -9,7 +9,7 @@ const styles = {
   box: {
     padding: "25px",
     backgroundColor: "#fff",
-    margin: "40px 0",
+    margin: "60px 0",
     borderRadius: "5px"
   },
   title: {
@@ -75,37 +75,39 @@ const Page = () => {
   }
 
   return (
-    <Box sx={styles.box}>
-      <Grid container>
+    <Container>
+      <Box sx={styles.box}>
+        <Grid container>
 
-        <Grid item xs={12}>
-          <Grid container>
-            <Grid item xs={6}>
-              <Typography sx={styles.title} fontSize={50}>
-                Listas de Reproducción
-              </Typography>
-            </Grid>
-            <Grid item xs={6} sx={styles.containerButton}>
-              <Button onClick={handleShow} sx={styles.button} startIcon={<AddBoxIcon></AddBoxIcon>}>
-                Agregar
-              </Button>
+          <Grid item xs={12}>
+            <Grid container>
+              <Grid item xs={6}>
+                <Typography sx={styles.title} fontSize={50}>
+                  Listas de Reproducción
+                </Typography>
+              </Grid>
+              <Grid item xs={6} sx={styles.containerButton}>
+                <Button onClick={handleShow} sx={styles.button} startIcon={<AddBoxIcon></AddBoxIcon>}>
+                  Agregar
+                </Button>
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
 
-        <>
-          {
-            listas.map((lista: any, key: number) => (
-              <ListaReproduccion nombre={lista.nombre} starred={lista.starred} imagen={lista.image} key={key} descripcion={lista.descripcion} />
-            ))
-          }
-        </>
-      </Grid>
-      {
-        open &&
-        <ModalCustom open={open} handleClose={handleClose}/>
-      }
-    </Box>
+          <>
+            {
+              listas.map((lista: any, key: number) => (
+                <ListaReproduccion nombre={lista.nombre} starred={lista.starred} imagen={lista.image} key={key} descripcion={lista.descripcion} />
+              ))
+            }
+          </>
+        </Grid>
+        {
+          open &&
+          <ModalCustom open={open} handleClose={handleClose} />
+        }
+      </Box>
+    </Container>
   )
 }
 

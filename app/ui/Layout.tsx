@@ -11,9 +11,7 @@ const Layout = (props: ILayoutProps) => {
     return (
         <>
             <NavigationBar />
-            <Container>
-                {children}
-            </Container>
+            {children}
             <FooterCustom />
         </>
     )

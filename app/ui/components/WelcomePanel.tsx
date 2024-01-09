@@ -26,7 +26,7 @@ const WelcomePanel = () => {
           Bienvenido a mi tercer proyecto
       </Typography>
       <Typography sx={styles.text} fontSize={15}>
-          Se trata de una pagina web similar a Spotify o Deezer
+          Se trata de un proyecto que busca simular ser una pagina web para escuchar musica
       </Typography>
       </div>
     </Container>
