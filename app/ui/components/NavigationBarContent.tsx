@@ -1,8 +1,10 @@
+"use client"
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Box, Button, IconButton, Menu, MenuItem, Typography } from "@mui/material";
 import Link from 'next/link';
 import { MouseEvent, useState } from "react";
+import { usePathname } from 'next/navigation'
 
 const styles = {
     icon1: { display: { xs: 'none', md: 'flex' }, mr: 1 },
@@ -17,6 +19,7 @@ const styles = {
     },
     box1: { flexGrow: 1, display: { xs: 'none', md: 'flex' } },
     link: { my: 2, color: 'white', display: 'block' },
+    linkSelected: { my: 2, color: '#c1c2c3', display: 'block' },
     box2: { flexGrow: 1, display: { xs: 'flex', md: 'none' } },
     menu: {
         display: { xs: 'block', md: 'none' }
@@ -41,20 +44,21 @@ const pages = [
     },
     {
         titulo: 'Descubrir',
-        url: "descubrir"
+        url: "/descubrir"
     },
     {
         titulo: 'Mis Listas',
-        url: "mis-listas"
+        url: "/mis-listas"
     },
     {
         titulo: 'Sobre',
-        url: "sobre"
+        url: "/sobre"
     }
 ];
 
 const NavigationBarContent = () => {
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+    const pathname = usePathname();
     const handleOpenNavMenu = (event: MouseEvent<HTMLElement>) => {
         setAnchorElNav(event.currentTarget);
     };
@@ -69,16 +73,14 @@ const NavigationBarContent = () => {
                 noWrap
                 sx={styles.typo1}
             >
-                <Link href="/">
                     MuPlay
-                </Link>
             </Typography>
             <Box sx={styles.box1}>
                 {pages.map(({titulo, url}) => (
-                    <Link href={`/${url}`} key={url}>
+                    <Link href={url} key={url}>
                         <Button
                             onClick={handleCloseNavMenu}
-                            sx={ styles.link }
+                            sx={ url === pathname ? styles.linkSelected : styles.link }
                         >
                             {titulo}
                         </Button>
@@ -114,7 +116,7 @@ const NavigationBarContent = () => {
                     sx={styles.menu}
                 >
                     {pages.map(({titulo, url}) => (
-                        <Link href={`/${url}`} key={url}>
+                        <Link href={url} key={url}>
                             <MenuItem >
                                 <Typography textAlign="center">{titulo}</Typography>
                             </MenuItem>

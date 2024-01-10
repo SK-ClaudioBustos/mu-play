@@ -13,22 +13,24 @@ import Typography from '@mui/material/Typography';
 import LinkCustom from '../utils/LinkCustom';
 import NavigationBarContent from './NavigationBarContent';
 import { useState, MouseEvent } from 'react';
+import Link from 'next/link';
 
 const styles = {
   appbar: { backgroundColor: "#116149" },
   box: { flexGrow: 0 },
   menu: { mt: '45px' },
-  iconButton: { p: 0 }
+  iconButton: { p: 0 },
+  settingsItem: { color: "#000"}
 }
 
 const settings = [
   {
     titulo: 'Perfil',
-    url: "perfil"
+    url: "/perfil"
   },
   {
     titulo: 'Cerrar Sesión',
-    url: "#"
+    url: "/"
   }
 ];
 
@@ -72,9 +74,9 @@ function NavigationBar() {
               {
                 settings.map(({ titulo, url }) => (
                   <MenuItem key={url} onClick={handleCloseUserMenu}>
-                    <LinkCustom href={`/${url}`} style={{ color: "#000"}}>
+                    <Link href={url} style={styles.settingsItem}>
                       <Typography textAlign="center">{titulo}</Typography>
-                    </LinkCustom>
+                    </Link>
                   </MenuItem>
                 ))
               }
