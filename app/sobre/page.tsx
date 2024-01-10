@@ -12,7 +12,7 @@ const styles = {
   box: {
     maxHeight: "350px",
     maxWidth: "600px",
-    backgroundColor: "#0AAD74",
+    backgroundColor: "#fff",
     margin: "70px 0",
     borderRadius: "5px",
     padding: "20px 80px"
