@@ -7,6 +7,7 @@ import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import Image from "next/image";
 import { useState } from "react";
+import Tooltip from "@mui/material/Tooltip";
 
 interface IListaReproduccionProps {
     nombre: string
@@ -49,15 +50,19 @@ const ListaReproduccion = (props: IListaReproduccionProps) => {
                 </Grid>
                 <Grid item xs={2} sx={styles.containerText}>
                     <IconButton>
-                        <DeleteIcon color="error"></DeleteIcon>
+                        <Tooltip title="Eliminar lista de reproducción">
+                            <DeleteIcon color="error" />
+                        </Tooltip>
                     </IconButton>
                     <IconButton onClick={() => setStar(!star)}>
-                        {
-                            star
-                                ? <StarIcon color="success" />
-                                : <StarBorderIcon color="success"/>
+                        <Tooltip title={ star ? "Desmarcar como favorita" : "Marcar como favorita" }>
+                            {
+                                star
+                                    ? <StarIcon color="success" />
+                                    : <StarBorderIcon color="success" />
 
-                        }
+                            }
+                        </Tooltip>
                     </IconButton>
                 </Grid>
             </Grid>

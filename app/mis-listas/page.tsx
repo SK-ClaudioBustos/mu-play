@@ -1,6 +1,6 @@
 "use client"
 
-import { Box, Button, ButtonGroup, Container, Grid, Modal, TextField, Typography } from "@mui/material";
+import { Box, Button, ButtonGroup, Container, Grid, Modal, TextField, Tooltip, Typography } from "@mui/material";
 import ListaReproduccion from "../ui/components/ListaReproduccion";
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import { useState } from "react";
@@ -87,13 +87,14 @@ const Page = () => {
                 </Typography>
               </Grid>
               <Grid item xs={6} sx={styles.containerButton}>
-                <Button onClick={handleShow} sx={styles.button} startIcon={<AddBoxIcon></AddBoxIcon>}>
-                  Agregar
-                </Button>
+                <Tooltip title="Agregar nueva lista de reproducción">
+                  <Button onClick={handleShow} sx={styles.button} startIcon={<AddBoxIcon></AddBoxIcon>}>
+                    Agregar
+                  </Button>
+                </Tooltip>
               </Grid>
             </Grid>
           </Grid>
-
           <>
             {
               listas.map((lista: any, key: number) => (
