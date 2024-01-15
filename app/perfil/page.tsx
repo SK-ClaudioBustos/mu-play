@@ -1,7 +1,9 @@
 "use client"
 import CreateIcon from '@mui/icons-material/Create';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Avatar, Box, Button, Container, Grid, Tab, Tabs, TextField, Tooltip, Typography } from "@mui/material";
+import LockResetIcon from '@mui/icons-material/LockReset';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import { Avatar, Box, Button, Container, Grid, IconButton, Tab, Tabs, Tooltip, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { SyntheticEvent, useState } from "react";
 import LabelCustom from "../ui/utils/LabelCustom";
@@ -12,16 +14,16 @@ const styles = {
     justifyContent: "center"
   },
   box: {
-    padding: "40px 0",
+    padding: "35px 0",
     backgroundColor: "#fff",
     margin: "80px 0",
     borderRadius: "5px",
     display: "flex",
     justifyContent: "center",
     width: "600px",
-    maxHeight: "600px"
+    maxHeight: "550px"
   },
-  grid: { padding: "0px 80px", height: "600px" },
+  grid: { padding: "0px 80px", height: "500px" },
   item: { display: "flex", alignItems: "center" },
   avatar: {
     bgcolor: grey[500],
@@ -64,7 +66,7 @@ const Page = () => {
   return (
     <Container sx={styles.container}>
       <Box sx={styles.box}>
-        <Grid container sx={styles.container} rowSpacing={3}>
+        <Grid container sx={styles.container} rowSpacing={5}>
 
           <Grid item xs={12}>
             <Box sx={styles.container}>
@@ -86,50 +88,62 @@ const Page = () => {
               {
                 value === 0 &&
                 <Grid item xs={12}>
-                  <Box hidden={value !== 0} >
-                    <Grid container rowSpacing={{ xs: 1, sm: 2, md: 4 }}>
-                      <Grid item xs={12}>
-                        <Box sx={styles.containerButton}>
-                          <Tooltip title="Editar perfil">
-                            <Button startIcon={<CreateIcon />} color="primary" />
-                          </Tooltip>
-                        </Box>
+                  <Grid container rowSpacing={{ xs: 1, sm: 2, md: 4 }}>
+                    <Grid item xs={12} >
+                      <Grid container>
+                        <Grid item xs={11}>
+                          <Avatar sx={styles.avatar} alt="Claudio Bustos" src="img/perfil.jpg" />
+                        </Grid>
+                        <Grid item xs={1}>
+                          <Box sx={styles.containerButton}>
+                            <Tooltip title="Editar perfil">
+                              <Button startIcon={<CreateIcon />} color="primary" />
+                            </Tooltip>
+                          </Box>
+                        </Grid>
                       </Grid>
-                      <Grid item xs={12} >
-                        <Avatar sx={styles.avatar} alt="Claudio Bustos" src="img/perfil.jpg" />
-                      </Grid>
-                      {
-                        items.map(({ label, text }, key) => (
-                          <Grid sx={styles.item} item xs={label === "Correo Electrónico" ? 12 : 6} key={key}>
-                            <LabelCustom primary={text} secondary={label} />
-                          </Grid>
-                        ))
-                      }
+
                     </Grid>
-                  </Box>
+                    {
+                      items.map(({ label, text }, key) => (
+                        <Grid sx={styles.item} item xs={label === "Correo Electrónico" ? 12 : 6} key={key}>
+                          <LabelCustom primary={text} secondary={label} />
+                        </Grid>
+                      ))
+                    }
+                  </Grid>
                 </Grid>
               }
 
               {
                 value === 1 &&
                 <Grid item xs={12}>
-                  <Box hidden={value !== 1}>
-                    <Grid container>
-                      <Grid sx={styles.item} item xs={6}>
-                        <LabelCustom primary={"****************"} secondary={"Contraseña"} />
-                      </Grid>
-                      <Grid sx={styles.item} item xs={6}>
-                        <TextField color="success" variant="standard" label="Nueva Contraseña" autoComplete="off" />
-                      </Grid>
+                  <Grid container>
+
+                    <Grid sx={styles.item} item xs={12}>
+                      <LabelCustom primary={"****************"} secondary={"Contraseña"} />
+                      <IconButton>
+                        <VisibilityIcon />
+                      </IconButton>
                     </Grid>
-                  </Box>
+
+                    <Grid item xs={12}>
+                      <Button sx={styles.deleteButton} variant="outlined" startIcon={<LockResetIcon />} color="success" >
+                        Cambiar contraseña
+                      </Button>
+                    </Grid>
+
+                  </Grid>
                 </Grid>
               }
 
               {
                 value === 2 &&
                 <Grid item xs={12}>
-                  <Box hidden={value !== 2}>
+                  <Grid container rowSpacing={2}>
+                    <Grid item xs={12}>
+                      <LabelCustom primary='Premium' secondary='Tipo de cuenta' />
+                    </Grid>
                     <Grid item xs={12} sx={styles.itemCuenta}>
                       <Typography color="error" fontSize={20}>
                         Dar de baja mi Cuenta
@@ -143,13 +157,12 @@ const Page = () => {
                         Eliminar cuenta
                       </Button>
                     </Grid>
-                  </Box>
+                  </Grid>
                 </Grid>
               }
 
             </Grid>
           </Grid>
-
         </Grid>
       </Box>
     </Container>
