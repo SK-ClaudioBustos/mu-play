@@ -7,19 +7,19 @@ import { MouseEvent, useState } from "react";
 import { usePathname } from 'next/navigation'
 
 const styles = {
-    icon1: { display: { xs: 'none', md: 'flex' }, mr: 1 },
+    icon1: { color: "#116149", display: { xs: 'none', md: 'flex' }, mr: 1 },
     typo1: {
         mr: 2,
         display: { xs: 'none', md: 'flex' },
         fontFamily: 'monospace',
         fontWeight: 700,
         letterSpacing: '.3rem',
-        color: 'inherit',
+        color: '#116149',
         textDecoration: 'none',
     },
     box1: { flexGrow: 1, display: { xs: 'none', md: 'flex' } },
-    link: { my: 2, color: 'white', display: 'block' },
-    linkSelected: { my: 2, color: '#c1c2c3', display: 'block' },
+    link: { my: 2, color: '#c1c2c3', display: 'block' },
+    linkSelected: { my: 2, color: '#116149', display: 'block' },
     box2: { flexGrow: 1, display: { xs: 'flex', md: 'none' } },
     menu: {
         display: { xs: 'block', md: 'none' }
@@ -32,7 +32,7 @@ const styles = {
         fontFamily: 'monospace',
         fontWeight: 700,
         letterSpacing: '.3rem',
-        color: 'inherit',
+        color: '#116149',
         textDecoration: 'none',
     },
 }

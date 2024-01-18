@@ -8,7 +8,7 @@ import { useState } from "react";
 const styles = {
   box: {
     padding: "25px",
-    backgroundColor: "#fff",
+    backgroundColor: "#eee",
     margin: "60px 0",
     borderRadius: "5px"
   },

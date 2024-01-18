@@ -15,7 +15,7 @@ const styles = {
   },
   box: {
     padding: "35px 0",
-    backgroundColor: "#fff",
+    backgroundColor: "#eee",
     margin: "80px 0",
     borderRadius: "5px",
     display: "flex",
@@ -142,7 +142,7 @@ const Page = () => {
                 <Grid item xs={12}>
                   <Grid container rowSpacing={2}>
                     <Grid item xs={12}>
-                      <LabelCustom primary='Premium' secondary='Tipo de cuenta' />
+                      <LabelCustom primary='Premium' secondary='Tipo de cuenta' color='#FFE70F' />
                     </Grid>
                     <Grid item xs={12} sx={styles.itemCuenta}>
                       <Typography color="error" fontSize={20}>

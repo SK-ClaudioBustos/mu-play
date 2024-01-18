@@ -10,7 +10,7 @@ export interface IContentBox {
 }
 
 const styles = {
-    box: { backgroundColor: "#fff", borderRadius: "5px", margin: "30px 0 70px 0", padding: "40px 0" },
+    box: { backgroundColor: "#eee", borderRadius: "5px", margin: "30px 0 70px 0", padding: "40px 0" },
     grid: { display: "flex", justifyContent: "center", marginBottom: "10px", padding: "0px" } 
 }
 

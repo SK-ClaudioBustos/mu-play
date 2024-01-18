@@ -15,11 +15,10 @@ import { MouseEvent, useState } from 'react';
 import NavigationBarContent from './NavigationBarContent';
 
 const styles = {
-  appbar: { backgroundColor: "#116149" },
   box: { flexGrow: 0 },
   menu: { mt: '45px' },
   iconButton: { p: 0 },
-  settingsItem: { color: "#000"}
+  settingsItem: { color: "#000" }
 }
 
 const settings = [
@@ -44,7 +43,6 @@ function NavigationBar() {
   };
 
   return (
-    <AppBar sx={styles.appbar} position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <NavigationBarContent />
@@ -81,10 +79,8 @@ function NavigationBar() {
               }
             </Menu>
           </Box>
-
         </Toolbar>
       </Container>
-    </AppBar>
   );
 }
 export default NavigationBar;

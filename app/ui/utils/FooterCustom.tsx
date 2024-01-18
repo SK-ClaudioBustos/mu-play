@@ -10,7 +10,7 @@ const styles = {
     box: {
         width: "100%",
         height: "70px",
-        backgroundColor: "#116149",
+        backgroundColor: "#fff",
         padding: "0px"
     },
     grid: {
@@ -18,10 +18,10 @@ const styles = {
         height: "100%"
     },
     iconButton: { 
-        color: "#f1f1f1" 
+        color: "#116149" 
     },
     text: {
-        color: "#f1f1f1",
+        color: "#116149",
         textAlign: "end"
     }
 }
