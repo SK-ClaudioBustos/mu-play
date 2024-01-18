@@ -20,7 +20,7 @@ const styles = {
     item: {
         backgroundColor: "#E2E2E2",
         padding: "0",
-        boxShadow: "3px 3px 7px 1px rgba(0, 0, 0, 0.2)",
+        // boxShadow: "3px 3px 7px 1px rgba(0, 0, 0, 0.2)",
         margin: "10px 0"
     },
     containerImage: {

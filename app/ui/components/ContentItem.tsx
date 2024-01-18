@@ -24,7 +24,7 @@ const ContentItem = (props: IContentItemProps) => {
     } = props;
     return (
         <Grid item xs={3} sx={styles.grid}>
-            <Card sx={{ maxWidth: 200 }}>
+            <Card sx={{ maxWidth: 200, boxShadow: "none" }}>
                 <CardActionArea>
                     <Image
                         priority

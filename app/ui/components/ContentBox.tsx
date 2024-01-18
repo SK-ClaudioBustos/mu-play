@@ -20,7 +20,7 @@ const ContentBox = async (props: IContentBox) => {
     return (
         <Box sx={styles.box}>
 
-            <Grid container rowSpacing={2} columnSpacing={0}>
+            <Grid container rowSpacing={6} columnSpacing={0}>
                 <Grid item xs={12} sx={styles.grid}>
                     <Typography fontSize={30}>
                         {word}
