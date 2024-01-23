@@ -19,7 +19,7 @@ const styles = {
     flexGrow: 0,
   },
   menu: {
-    mt: '45px'
+    mt: '45px',
   },
   iconButton: {
     p: 0

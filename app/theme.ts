@@ -8,8 +8,8 @@ const theme = createTheme({
     typography: {
         fontFamily: font.style.fontFamily,
         fontWeightMedium: font.style.fontWeight,
-      },
-      palette: {
+    },
+     palette: {
         primary: {
           main: '#96FAD4',
           light: '#96FAD4',
@@ -22,7 +22,17 @@ const theme = createTheme({
           dark: '#00613C',
           contrastText: '#00613C',
         },
+    },
+    components: {
+      MuiMenu: {
+        styleOverrides: {
+          paper: {
+            boxShadow: "0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)",
+            backgroundColor: "#CCFFEB"
+          }
+        }
       }
+    }  
   });
 
 export default theme;
