@@ -7,9 +7,9 @@ import { styled } from '@mui/material/styles';
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: "#eee",
+    backgroundColor: "#CCFFEB",
     width: '100%',
-    margin: "20px 0",
+    margin: "25px 0px 0px 0px",
     [theme.breakpoints.up('sm')]: {
         width: 'auto',
     },

@@ -7,6 +7,7 @@ import { Avatar, Box, Button, Container, Grid, IconButton, Tab, Tabs, Tooltip, T
 import { grey } from "@mui/material/colors";
 import { SyntheticEvent, useState } from "react";
 import LabelCustom from "../ui/utils/LabelCustom";
+import tabs from '../ui/data/tabsSettings';
 
 const styles = {
   container: {
@@ -15,9 +16,8 @@ const styles = {
   },
   box: {
     padding: "35px 0",
-    backgroundColor: "#eee",
+    backgroundColor: "#CCFFEB",
     margin: "80px 0",
-    borderRadius: "5px",
     display: "flex",
     justifyContent: "center",
     width: "600px",
@@ -33,30 +33,11 @@ const styles = {
   containerButton: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "right"
+    justifyContent: "center"
   },
   deleteButton: { marginTop: "15px" },
   itemCuenta: { display: "flex", alignItems: "center", flexWrap: "wrap", borderRadius: "5px" }
 }
-
-const items = [
-  {
-    label: "Nombre",
-    text: "Claudio"
-  },
-  {
-    label: "Apellido",
-    text: "Bustos"
-  },
-  {
-    label: "Telefonó",
-    text: "+54 89034523"
-  },
-  {
-    label: "Correo Electrónico",
-    text: "claudiobustos.sk2000@gmail.com"
-  },
-];
 
 const Page = () => {
   const [value, setValue] = useState<number>(0);
@@ -88,6 +69,7 @@ const Page = () => {
               {
                 value === 0 &&
                 <Grid item xs={12}>
+
                   <Grid container rowSpacing={{ xs: 1, sm: 2, md: 4 }}>
                     <Grid item xs={12} >
                       <Grid container>
@@ -97,7 +79,7 @@ const Page = () => {
                         <Grid item xs={1}>
                           <Box sx={styles.containerButton}>
                             <Tooltip title="Editar perfil">
-                              <Button startIcon={<CreateIcon />} color="primary" />
+                              <Button startIcon={<CreateIcon />} color="secondary"/>
                             </Tooltip>
                           </Box>
                         </Grid>
@@ -105,23 +87,24 @@ const Page = () => {
 
                     </Grid>
                     {
-                      items.map(({ label, text }, key) => (
+                      tabs.map(({ label, text }, key) => (
                         <Grid sx={styles.item} item xs={label === "Correo Electrónico" ? 12 : 6} key={key}>
-                          <LabelCustom primary={text} secondary={label} />
+                          <LabelCustom primary={text} secondary={label} colorP="#00613C" colorS="#1E9467"/>
                         </Grid>
                       ))
                     }
                   </Grid>
+
                 </Grid>
               }
 
               {
                 value === 1 &&
                 <Grid item xs={12}>
-                  <Grid container>
 
+                  <Grid container>
                     <Grid sx={styles.item} item xs={12}>
-                      <LabelCustom primary={"****************"} secondary={"Contraseña"} />
+                      <LabelCustom primary={"****************"} secondary={"Contraseña"} colorP="#00613C" colorS="#1E9467"/>
                       <IconButton>
                         <VisibilityIcon />
                       </IconButton>
@@ -134,15 +117,17 @@ const Page = () => {
                     </Grid>
 
                   </Grid>
+
                 </Grid>
               }
 
               {
                 value === 2 &&
                 <Grid item xs={12}>
+
                   <Grid container rowSpacing={2}>
                     <Grid item xs={12}>
-                      <LabelCustom primary='Premium' secondary='Tipo de cuenta' color='#FFE70F' />
+                      <LabelCustom primary='No Premium' secondary='Tipo de cuenta' colorP="#00613C" colorS="#1E9467" />
                     </Grid>
                     <Grid item xs={12} sx={styles.itemCuenta}>
                       <Typography color="error" fontSize={20}>
@@ -158,6 +143,7 @@ const Page = () => {
                       </Button>
                     </Grid>
                   </Grid>
+
                 </Grid>
               }
 

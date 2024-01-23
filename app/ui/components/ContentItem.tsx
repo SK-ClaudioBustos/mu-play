@@ -1,10 +1,9 @@
+import Box from "@mui/material/Box"
 import Card from "@mui/material/Card"
-import CardActionArea from "@mui/material/CardActionArea"
 import CardContent from "@mui/material/CardContent"
-import CardMedia from "@mui/material/CardMedia"
 import Grid from "@mui/material/Grid"
+import Image from 'next/image'
 import LabelCustom from "../utils/LabelCustom"
-import Image from "next/image"
 
 interface IContentItemProps {
     song: string
@@ -12,8 +11,23 @@ interface IContentItemProps {
     image: string
 }
 
-const styles = {
-    grid: { display: "flex", justifyContent: "center" }
+const st = {
+    grid: {
+        display: "flex",
+        justifyContent: "center"
+    },
+    card: {
+        display: 'flex',
+        width: "500px",
+        backgroundColor: "#54E8B0"
+    },
+    box: {
+        display: "flex",
+        alignItems: "center"
+    },
+    content: { 
+        flex: '1 0 auto'
+    },
 }
 
 const ContentItem = (props: IContentItemProps) => {
@@ -23,20 +37,20 @@ const ContentItem = (props: IContentItemProps) => {
         image,
     } = props;
     return (
-        <Grid item xs={3} sx={styles.grid}>
-            <Card sx={{ maxWidth: 200, boxShadow: "none" }}>
-                <CardActionArea>
-                    <Image
-                        priority
-                        height="200"
-                        width="200"
-                        alt="imagen de album"
-                        src={image}
-                    />
-                    <CardContent>
-                        <LabelCustom primary={song || "---"} secondary={artist || "---"} />
+        <Grid item xs={6} sx={st.grid}>
+            <Card sx={st.card}>
+                <Image
+                    priority
+                    height="151"
+                    width="151"
+                    alt="imagen de album"
+                    src={image}
+                />
+                <Box sx={st.box}>
+                    <CardContent sx={st.content}>
+                        <LabelCustom primary={song || "---"} secondary={artist || "---"} colorP="#00613C" colorS="#1E9467"/>
                     </CardContent>
-                </CardActionArea>
+                </Box>
             </Card>
         </Grid>
     )

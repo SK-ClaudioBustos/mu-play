@@ -9,17 +9,13 @@ const seccion1: SectionContentData[] = [
       count: 7,
     },
     {
-      word: "Metallica",
+      word: "Breaking Benjamin",
       count: 5,
     },
     {
       word: "Avenged Sevenfold",
       count: 8,
-    },
-    {
-      word: "Cannibal Corpse",
-      count: 3,
-    },
+    }
 ];
 
 const seccion2: SectionContentData[] = [
@@ -35,7 +31,7 @@ const seccion2: SectionContentData[] = [
 
 export const secciones = [
   {
-    title: "Metal",
+    title: "Metal Alternativo",
     content: seccion1
   },
   {
