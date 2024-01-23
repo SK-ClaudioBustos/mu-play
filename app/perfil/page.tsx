@@ -16,7 +16,7 @@ const styles = {
   },
   box: {
     padding: "35px 0",
-    backgroundColor: "#CCFFEB",
+    backgroundColor: "#54E8B0",
     margin: "80px 0",
     display: "flex",
     justifyContent: "center",

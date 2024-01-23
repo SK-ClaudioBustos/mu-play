@@ -8,13 +8,14 @@ const st = {
   container: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "center"
   },
   box: {
     maxHeight: "350px",
     maxWidth: "600px",
     margin: "70px 0",
     padding: "20px 80px",
+    backgroundColor: "#54E8B0"
   },
   description : {
     color: "#00613C"

@@ -26,7 +26,6 @@ const ContentBox = async (props: IContentBox) => {
     const dataFormateada = await useFetch({ word, count });
     return (
         <Box sx={styles.box}>
-
             <Grid container rowSpacing={6} columnSpacing={0}>
                 {
                     dataFormateada.map((item: itemData, key: number) =>

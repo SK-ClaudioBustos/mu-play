@@ -11,8 +11,7 @@ const styles = {
   },
   box: {
     backgroundColor: "#CCFFEB",
-    borderRadius: "3px",
-    height: "4px",
+    height: "2px",
     width: "730px",
     marginBottom: "20px"
   },
