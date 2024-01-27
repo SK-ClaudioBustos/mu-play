@@ -1,13 +1,13 @@
 "use client"
 import CreateIcon from '@mui/icons-material/Create';
 import DeleteIcon from '@mui/icons-material/Delete';
-import LockResetIcon from '@mui/icons-material/LockReset';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import { Avatar, Box, Button, Container, Grid, IconButton, Tab, Tabs, Tooltip, Typography } from "@mui/material";
+import { Box, Button, Container, Grid, IconButton, Tab, Tabs, Tooltip, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
+import Image from 'next/image';
 import { SyntheticEvent, useState } from "react";
+import profileFields from '../ui/data/profileFields';
 import LabelCustom from "../ui/utils/LabelCustom";
-import tabs from '../ui/data/tabsSettings';
 
 const styles = {
   container: {
@@ -25,10 +25,8 @@ const styles = {
   },
   grid: { padding: "0px 80px", height: "500px" },
   item: { display: "flex", alignItems: "center" },
-  avatar: {
-    bgcolor: grey[500],
-    height: 120,
-    width: 120
+  avatar: { 
+    borderRadius: "50%" 
   },
   containerButton: {
     display: "flex",
@@ -72,7 +70,7 @@ const Page = () => {
                   <Grid item xs={12} >
                     <Grid container>
                       <Grid item xs={11}>
-                        <Avatar sx={styles.avatar} alt="Claudio Bustos" src="img/perfil.jpg" />
+                        <Image alt="Imegen de perfil" width="100" height="100" src="/img/profileDefault.jpg" style={styles.avatar}/>
                       </Grid>
                       <Grid item xs={1}>
                         <Box sx={styles.containerButton}>
@@ -84,7 +82,7 @@ const Page = () => {
                     </Grid>
                   </Grid>
                   {
-                    tabs.map(({ label, text }, key) => (
+                    profileFields.map(({ label, text }, key) => (
                       <Grid sx={styles.item} item xs={label === "Correo Electrónico" ? 12 : 6} key={key}>
                         <LabelCustom primary={text} secondary={label} colorP="#00613C" colorS="#1E9467" />
                       </Grid>
@@ -98,14 +96,20 @@ const Page = () => {
                 <Grid container>
                   <Grid sx={styles.item} item xs={6}>
                     <LabelCustom primary={"****************"} secondary={"Contraseña"} colorP="#00613C" colorS="#1E9467" />
-                    <IconButton>
-                      <VisibilityIcon />
-                    </IconButton>
                   </Grid>
-                  <Grid item xs={6}>
-                    <Button sx={styles.deleteButton} variant="outlined" startIcon={<LockResetIcon />} color="success" >
-                      Cambiar contraseña
-                    </Button>
+                  <Grid item xs={3}>
+                    <Tooltip title="Ver contraseña">
+                      <IconButton>
+                        <VisibilityIcon />
+                      </IconButton>
+                    </Tooltip>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <Tooltip title="Editar contraseña">
+                      <IconButton>
+                        <CreateIcon />
+                      </IconButton>
+                    </Tooltip>
                   </Grid>
                 </Grid>
               </Grid>

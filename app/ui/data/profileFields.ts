@@ -1,11 +1,7 @@
-const tabs = [
+const profileFields = [
     {
-      label: "Nombre",
-      text: "Claudio"
-    },
-    {
-      label: "Apellido",
-      text: "Bustos"
+      label: "Nombre usuario",
+      text: "TrailBlazer2000"
     },
     {
       label: "Telefonó",
@@ -17,8 +13,8 @@ const tabs = [
     },
     {
       label: "Correo Electrónico",
-      text: "claudiobustos.sk2000@gmail.com"
+      text: "jhonDoe2000@gmail.com"
     },
 ];
 
-export default tabs;
+export default profileFields;

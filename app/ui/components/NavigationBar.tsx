@@ -46,7 +46,7 @@ function NavigationBar() {
         <Box sx={styles.box}>
           <Tooltip title="Mostrar opciones">
             <IconButton onClick={handleOpenUserMenu} sx={styles.iconButton}>
-              <Avatar alt="Claudio Bustos" src="img/perfil.jpg" />
+              <Avatar alt="Claudio Bustos" src="img/profileDefault.jpg" />
             </IconButton>
           </Tooltip>
           <Menu
