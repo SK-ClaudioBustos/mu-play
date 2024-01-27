@@ -4,12 +4,7 @@ import CardContent from "@mui/material/CardContent"
 import Grid from "@mui/material/Grid"
 import Image from 'next/image'
 import LabelCustom from "../utils/LabelCustom"
-
-interface IContentItemProps {
-    song: string
-    artist: string
-    image: string
-}
+import { IitemData } from "../hooks/useFetch"
 
 const st = {
     grid: {
@@ -30,7 +25,7 @@ const st = {
     },
 }
 
-const ContentItem = (props: IContentItemProps) => {
+const ContentItem = (props: IitemData) => {
     const {
         song,
         artist,

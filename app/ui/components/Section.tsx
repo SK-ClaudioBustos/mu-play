@@ -1,11 +1,11 @@
 import Box from "@mui/material/Box"
 import Typography from "@mui/material/Typography"
+import { IsearchParamsProps } from "../hooks/useFetch"
 import ContentBox from "./ContentBox"
-import { SectionContentData } from "../data/sections"
 
 interface SectionProps {
     title: string
-    content: SectionContentData[]
+    content: IsearchParamsProps[]
 }
 
 const st = {
@@ -31,11 +31,7 @@ const Section = (props: SectionProps) => {
                 </Typography>
             </Box>
             <div>
-                {
-                    content.map((seccion, key) => (
-                        <ContentBox count={seccion.count} word={seccion.word} key={key} />
-                    ))
-                }
+                <ContentBox searchQuery={content}/>
             </div>
         </>
     )

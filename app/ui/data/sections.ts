@@ -1,9 +1,6 @@
-export interface SectionContentData {
-    word: string;
-    count: number;
-}
+import { IsearchParamsProps } from "../hooks/useFetch";
 
-const seccion1: SectionContentData[] = [
+const seccion1: IsearchParamsProps[] = [
     {
       word: "Linkin Park",
       count: 7,
@@ -18,7 +15,7 @@ const seccion1: SectionContentData[] = [
     }
 ];
 
-const seccion2: SectionContentData[] = [
+const seccion2: IsearchParamsProps[] = [
   {
     word: "Judas Priest",
     count: 5,

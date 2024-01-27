@@ -1,12 +1,7 @@
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import useFetch, { itemData } from "../hooks/useFetch";
+import useFetch, { IitemData, IsearchQuery } from "../hooks/useFetch";
 import ContentItem from "./ContentItem";
-
-export interface IContentBox {
-    word: string
-    count: number
-}
 
 const styles = {
     box: {
@@ -21,14 +16,14 @@ const styles = {
     }
 }
 
-const ContentBox = async (props: IContentBox) => {
-    const { word, count } = props;
-    const dataFormateada = await useFetch({ word, count });
+const ContentBox = async (props: IsearchQuery) => {
+    const { searchQuery } = props;
+    const dataFormateada = await useFetch({ searchQuery });
     return (
         <Box sx={styles.box}>
             <Grid container rowSpacing={6} columnSpacing={0}>
-                {
-                    dataFormateada.map((item: itemData, key: number) =>
+                {   dataFormateada &&
+                    dataFormateada.map((item: IitemData, key: number) =>
                         <ContentItem key={key} artist={item.artist} song={item.song} image={item.image} />
                     )
                 }
