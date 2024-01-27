@@ -1,7 +1,7 @@
 const settings = [
     {
-      titulo: 'Perfil',
-      url: "/perfil"
+      titulo: 'Usuario',
+      url: "/usuario"
     },
     {
       titulo: 'Cerrar Sesión',

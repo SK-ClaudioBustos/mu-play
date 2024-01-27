@@ -4,21 +4,30 @@ import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import { Grid, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
-import { ITabProps } from './TabPerfil';
 
 const styles = {
     itemsConfiguracion: {
         backgroundColor: '#CCFFEB',
         margin: "5px 0"
+    },
+    list: {
+        width: '100%',
+        maxWidth: 360,
+        backgroundColor: 'inherit',
+        color: "#00613C"
     }
 }
 
-const TabConfiguracion = (props: ITabProps) => {
+interface ITabConfiguracionProps {
+    value: number
+}
+
+const TabConfiguracion = (props: ITabConfiguracionProps) => {
     const { value } = props;
     return (
         <Grid item xs={12} sx={{ display: value === 1 ? "flex" : "none", justifyContent: "center" }}>
             <List
-                sx={{ width: '100%', maxWidth: 360, backgroundColor: 'inherit', color: "#00613C" }}
+                sx={styles.list}
                 component="nav"
                 aria-labelledby="nested-list-subheader"
             >
@@ -61,5 +70,6 @@ const TabConfiguracion = (props: ITabProps) => {
         </Grid>
     )
 }
+
 
 export default TabConfiguracion
