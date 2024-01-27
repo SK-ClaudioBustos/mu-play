@@ -66,86 +66,67 @@ const Page = () => {
 
           <Grid item xs={12}>
             <Grid container sx={styles.grid} rowSpacing={{ xs: 1, sm: 1, md: 1 }}>
-              {
-                value === 0 &&
-                <Grid item xs={12}>
 
-                  <Grid container rowSpacing={{ xs: 1, sm: 2, md: 4 }}>
-                    <Grid item xs={12} >
-                      <Grid container>
-                        <Grid item xs={11}>
-                          <Avatar sx={styles.avatar} alt="Claudio Bustos" src="img/perfil.jpg" />
-                        </Grid>
-                        <Grid item xs={1}>
-                          <Box sx={styles.containerButton}>
-                            <Tooltip title="Editar perfil">
-                              <Button startIcon={<CreateIcon />} color="secondary"/>
-                            </Tooltip>
-                          </Box>
-                        </Grid>
+              <Grid item xs={12} sx={{ display: value === 0 ? "initial" : "none" }}>
+                <Grid container rowSpacing={{ xs: 1, sm: 2, md: 4 }}>
+                  <Grid item xs={12} >
+                    <Grid container>
+                      <Grid item xs={11}>
+                        <Avatar sx={styles.avatar} alt="Claudio Bustos" src="img/perfil.jpg" />
                       </Grid>
-
-                    </Grid>
-                    {
-                      tabs.map(({ label, text }, key) => (
-                        <Grid sx={styles.item} item xs={label === "Correo Electrónico" ? 12 : 6} key={key}>
-                          <LabelCustom primary={text} secondary={label} colorP="#00613C" colorS="#1E9467"/>
-                        </Grid>
-                      ))
-                    }
-                  </Grid>
-
-                </Grid>
-              }
-
-              {
-                value === 1 &&
-                <Grid item xs={12}>
-
-                  <Grid container>
-                    <Grid sx={styles.item} item xs={12}>
-                      <LabelCustom primary={"****************"} secondary={"Contraseña"} colorP="#00613C" colorS="#1E9467"/>
-                      <IconButton>
-                        <VisibilityIcon />
-                      </IconButton>
-                    </Grid>
-
-                    <Grid item xs={12}>
-                      <Button sx={styles.deleteButton} variant="outlined" startIcon={<LockResetIcon />} color="success" >
-                        Cambiar contraseña
-                      </Button>
-                    </Grid>
-
-                  </Grid>
-
-                </Grid>
-              }
-
-              {
-                value === 2 &&
-                <Grid item xs={12}>
-
-                  <Grid container rowSpacing={2}>
-                    <Grid item xs={12}>
-                      <LabelCustom primary='No Premium' secondary='Tipo de cuenta' colorP="#00613C" colorS="#1E9467" />
-                    </Grid>
-                    <Grid item xs={12} sx={styles.itemCuenta}>
-                      <Typography color="error" fontSize={20}>
-                        Dar de baja mi Cuenta
-                      </Typography>
-                      <Typography fontSize={15} color="error">
-                        Al dar de baja su cuenta la misma estará disponible
-                        durante 30 días por si se arrepiente de su decision, luego de pasado los
-                        30 días su cuenta será eliminada permanentemente.
-                      </Typography>
-                      <Button sx={styles.deleteButton} variant="outlined" startIcon={<DeleteIcon />} color="error" >
-                        Eliminar cuenta
-                      </Button>
+                      <Grid item xs={1}>
+                        <Box sx={styles.containerButton}>
+                          <Tooltip title="Editar perfil">
+                            <Button startIcon={<CreateIcon />} color="secondary" />
+                          </Tooltip>
+                        </Box>
+                      </Grid>
                     </Grid>
                   </Grid>
-
+                  {
+                    tabs.map(({ label, text }, key) => (
+                      <Grid sx={styles.item} item xs={label === "Correo Electrónico" ? 12 : 6} key={key}>
+                        <LabelCustom primary={text} secondary={label} colorP="#00613C" colorS="#1E9467" />
+                      </Grid>
+                    ))
+                  }
                 </Grid>
-              }
+
+              </Grid>
+
+              <Grid item xs={12} sx={{ display: value === 1 ? "initial" : "none" }}>
+                <Grid container>
+                  <Grid sx={styles.item} item xs={6}>
+                    <LabelCustom primary={"****************"} secondary={"Contraseña"} colorP="#00613C" colorS="#1E9467" />
+                    <IconButton>
+                      <VisibilityIcon />
+                    </IconButton>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Button sx={styles.deleteButton} variant="outlined" startIcon={<LockResetIcon />} color="success" >
+                      Cambiar contraseña
+                    </Button>
+                  </Grid>
+                </Grid>
+              </Grid>
+
+              <Grid item xs={12} sx={{ display: value === 2 ? "initial" : "none" }}>
+                <Grid container rowSpacing={2}>
+                  <Grid item xs={12} sx={styles.itemCuenta}>
+                    <Typography color="error" fontSize={20}>
+                      Dar de baja mi Cuenta
+                    </Typography>
+                    <Typography fontSize={15} color="error">
+                      Al dar de baja su cuenta la misma estará disponible
+                      durante 30 días por si se arrepiente de su decision, luego de pasado los
+                      30 días su cuenta será eliminada permanentemente.
+                    </Typography>
+                    <Button sx={styles.deleteButton} variant="outlined" startIcon={<DeleteIcon />} color="error" >
+                      Eliminar cuenta
+                    </Button>
+                  </Grid>
+                </Grid>
+              </Grid>
 
             </Grid>
           </Grid>

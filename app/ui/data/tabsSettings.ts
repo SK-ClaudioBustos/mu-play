@@ -12,6 +12,10 @@ const tabs = [
       text: "+54 89034523"
     },
     {
+      label: "Tipo de cuenta",
+      text: "No premium"
+    },
+    {
       label: "Correo Electrónico",
       text: "claudiobustos.sk2000@gmail.com"
     },
