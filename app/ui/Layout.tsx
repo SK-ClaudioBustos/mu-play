@@ -1,5 +1,5 @@
 import FooterCustom from "./utils/FooterCustom"
-import NavigationBar from "./components/NavigationBar"
+import NavigationBar from "./utils/NavigationBar"
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 

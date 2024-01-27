@@ -8,7 +8,7 @@ interface SectionProps {
     content: IsearchParamsProps[]
 }
 
-const st = {
+const styles = {
     box: {
         paddingLeft: "10px",
         height: "70px",
@@ -25,8 +25,8 @@ const Section = (props: SectionProps) => {
     const { title, content } = props;
     return (
         <>
-            <Box sx={st.box}>
-                <Typography sx={st.title} fontSize={35}>
+            <Box sx={styles.box}>
+                <Typography sx={styles.title} fontSize={35}>
                     {title}
                 </Typography>
             </Box>

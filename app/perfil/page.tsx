@@ -1,13 +1,9 @@
 "use client"
-import CreateIcon from '@mui/icons-material/Create';
-import DeleteIcon from '@mui/icons-material/Delete';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import { Box, Button, Container, Grid, IconButton, Tab, Tabs, Tooltip, Typography } from "@mui/material";
-import { grey } from "@mui/material/colors";
-import Image from 'next/image';
+import { Box, Container, Grid, Tab, Tabs } from "@mui/material";
 import { SyntheticEvent, useState } from "react";
-import profileFields from '../ui/data/profileFields';
-import LabelCustom from "../ui/utils/LabelCustom";
+import TabPerfil from "../ui/components/tabs/TabPerfil";
+import TabConfiguracion from "../ui/components/tabs/TabConfiguracion";
+import TabCuenta from "../ui/components/tabs/TabCuenta";
 
 const styles = {
   container: {
@@ -23,18 +19,15 @@ const styles = {
     width: "600px",
     maxHeight: "550px"
   },
-  grid: { padding: "0px 80px", height: "500px" },
-  item: { display: "flex", alignItems: "center" },
-  avatar: { 
-    borderRadius: "50%" 
+  grid: {
+    padding: "0px 80px",
+    height: "500px"
   },
   containerButton: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center"
   },
-  deleteButton: { marginTop: "15px" },
-  itemCuenta: { display: "flex", alignItems: "center", flexWrap: "wrap", borderRadius: "5px" }
 }
 
 const Page = () => {
@@ -56,7 +49,7 @@ const Page = () => {
                 textColor="inherit"
                 indicatorColor="primary">
                 <Tab label="Perfil" {...a11yProps(0)} />
-                <Tab label="Seguridad" {...a11yProps(1)} />
+                <Tab label="Configuración" {...a11yProps(1)} />
                 <Tab label="Cuenta" {...a11yProps(2)} />
               </Tabs>
             </Box>
@@ -64,74 +57,9 @@ const Page = () => {
 
           <Grid item xs={12}>
             <Grid container sx={styles.grid} rowSpacing={{ xs: 1, sm: 1, md: 1 }}>
-
-              <Grid item xs={12} sx={{ display: value === 0 ? "initial" : "none" }}>
-                <Grid container rowSpacing={{ xs: 1, sm: 2, md: 4 }}>
-                  <Grid item xs={12} >
-                    <Grid container>
-                      <Grid item xs={11}>
-                        <Image alt="Imegen de perfil" width="100" height="100" src="/img/profileDefault.jpg" style={styles.avatar}/>
-                      </Grid>
-                      <Grid item xs={1}>
-                        <Box sx={styles.containerButton}>
-                          <Tooltip title="Editar perfil">
-                            <Button startIcon={<CreateIcon />} color="secondary" />
-                          </Tooltip>
-                        </Box>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                  {
-                    profileFields.map(({ label, text }, key) => (
-                      <Grid sx={styles.item} item xs={label === "Correo Electrónico" ? 12 : 6} key={key}>
-                        <LabelCustom primary={text} secondary={label} colorP="#00613C" colorS="#1E9467" />
-                      </Grid>
-                    ))
-                  }
-                </Grid>
-
-              </Grid>
-
-              <Grid item xs={12} sx={{ display: value === 1 ? "initial" : "none" }}>
-                <Grid container>
-                  <Grid sx={styles.item} item xs={6}>
-                    <LabelCustom primary={"****************"} secondary={"Contraseña"} colorP="#00613C" colorS="#1E9467" />
-                  </Grid>
-                  <Grid item xs={3}>
-                    <Tooltip title="Ver contraseña">
-                      <IconButton>
-                        <VisibilityIcon />
-                      </IconButton>
-                    </Tooltip>
-                  </Grid>
-                  <Grid item xs={3}>
-                    <Tooltip title="Editar contraseña">
-                      <IconButton>
-                        <CreateIcon />
-                      </IconButton>
-                    </Tooltip>
-                  </Grid>
-                </Grid>
-              </Grid>
-
-              <Grid item xs={12} sx={{ display: value === 2 ? "initial" : "none" }}>
-                <Grid container rowSpacing={2}>
-                  <Grid item xs={12} sx={styles.itemCuenta}>
-                    <Typography color="error" fontSize={20}>
-                      Dar de baja mi Cuenta
-                    </Typography>
-                    <Typography fontSize={15} color="error">
-                      Al dar de baja su cuenta la misma estará disponible
-                      durante 30 días por si se arrepiente de su decision, luego de pasado los
-                      30 días su cuenta será eliminada permanentemente.
-                    </Typography>
-                    <Button sx={styles.deleteButton} variant="outlined" startIcon={<DeleteIcon />} color="error" >
-                      Eliminar cuenta
-                    </Button>
-                  </Grid>
-                </Grid>
-              </Grid>
-
+              <TabPerfil value={value}/>
+              <TabConfiguracion value={value}/>
+              <TabCuenta value={value}/>
             </Grid>
           </Grid>
         </Grid>
