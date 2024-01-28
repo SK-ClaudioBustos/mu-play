@@ -1,12 +1,20 @@
 const settings = [
-    {
-      titulo: 'Usuario',
-      url: "/usuario"
-    },
-    {
-      titulo: 'Cerrar Sesión',
-      url: "/"
-    }
+  {
+    titulo: 'Perfil',
+    url: "/usuario?perfil"
+  },
+  {
+    titulo: 'Configuración',
+    url: "/usuario?configuracion"
+  },
+  {
+    titulo: 'Cuenta',
+    url: "/usuario?cuenta"
+  },
+  {
+    titulo: 'Cerrar Sesión',
+    url: "/"
+  }
 ];
 
 export default settings;

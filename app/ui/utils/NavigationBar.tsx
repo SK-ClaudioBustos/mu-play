@@ -35,7 +35,7 @@ function NavigationBar() {
   const handleOpenUserMenu = (event: MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
   };
-  const handleCloseUserMenu = () => {
+  const handleCloseUserMenu: any = () => {
     setAnchorElUser(null);
   };
 

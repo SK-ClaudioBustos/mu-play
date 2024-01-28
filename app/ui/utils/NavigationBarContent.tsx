@@ -76,8 +76,8 @@ const NavigationBarContent = () => {
                     MuPlay
             </Typography>
             <Box sx={styles.box1}>
-                {pages.map(({titulo, url}) => (
-                    <Link href={url} key={url}>
+                {pages.map(({titulo, url},key) => (
+                    <Link href={url} key={key}>
                         <Button
                             onClick={handleCloseNavMenu}
                             sx={ url === pathname ? styles.linkSelected : styles.link }

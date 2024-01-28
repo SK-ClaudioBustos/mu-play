@@ -4,12 +4,12 @@ const profileFields = [
       text: "TrailBlazer2000"
     },
     {
-      label: "Telefonó",
-      text: "+54 89034523"
-    },
-    {
       label: "Tipo de cuenta",
       text: "No premium"
+    },
+    {
+      label: "Telefonó",
+      text: "+54 89034523"
     },
     {
       label: "Correo Electrónico",

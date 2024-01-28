@@ -1,9 +1,10 @@
 "use client"
 import { Box, Container, Grid, Tab, Tabs } from "@mui/material";
+import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
 import { SyntheticEvent, useState } from "react";
-import TabPerfil from "../ui/components/tabs/TabPerfil";
 import TabConfiguracion from "../ui/components/tabs/TabConfiguracion";
 import TabCuenta from "../ui/components/tabs/TabCuenta";
+import TabPerfil from "../ui/components/tabs/TabPerfil";
 
 const styles = {
   container: {
@@ -30,8 +31,15 @@ const styles = {
   },
 }
 
+const getActualTab = (searchParams: ReadonlyURLSearchParams) => {
+  if(searchParams.has("configuracion")) return 1;
+  if(searchParams.has("cuenta")) return 2;
+  return 0;
+}
+
 const Page = () => {
-  const [value, setValue] = useState<number>(0);
+  const searchParams = useSearchParams();
+  const [value, setValue] = useState<number>(getActualTab(searchParams));
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
@@ -46,7 +54,7 @@ const Page = () => {
                 value={value}
                 onChange={handleChange}
                 aria-label="basic tabs example"
-                textColor="inherit"
+                textColor="primary"
                 indicatorColor="primary">
                 <Tab label="Perfil" {...a11yProps(0)} />
                 <Tab label="Configuración" {...a11yProps(1)} />

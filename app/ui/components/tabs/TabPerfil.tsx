@@ -47,7 +47,7 @@ const TabPerfil = (props: ITabProps) => {
                 </Grid>
                 {
                     profileFields.map(({ label, text }, key) => (
-                        <Grid sx={styles.item} item xs={label === "Correo Electrónico" ? 12 : 6} key={key}>
+                        <Grid sx={styles.item} item xs={6} key={key}>
                             <LabelCustom primary={text} secondary={label} colorP="#00613C" colorS="#1E9467" />
                         </Grid>
                     ))
