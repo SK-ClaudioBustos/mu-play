@@ -5,7 +5,7 @@ const profileFields = [
     },
     {
       label: "Tipo de cuenta",
-      text: "No premium"
+      text: "MuPlay Free"
     },
     {
       label: "Telefonó",
