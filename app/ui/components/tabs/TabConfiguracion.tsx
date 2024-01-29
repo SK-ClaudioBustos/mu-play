@@ -3,6 +3,9 @@ import PasswordIcon from '@mui/icons-material/Password';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
+import DownloadIcon from '@mui/icons-material/Download';
+import StyleIcon from '@mui/icons-material/Style';
+import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import { Grid, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 
 const styles = {
@@ -25,7 +28,7 @@ interface ITabConfiguracionProps {
 const TabConfiguracion = (props: ITabConfiguracionProps) => {
     const { value } = props;
     return (
-        <Grid item xs={12} sx={{ display: value === 1 ? "flex" : "none", justifyContent: "center" }}>
+        <Grid item xs={12} sx={{ display: value === 0 ? "flex" : "none", justifyContent: "center" }}>
             <List
                 sx={styles.list}
                 component="nav"
@@ -64,6 +67,26 @@ const TabConfiguracion = (props: ITabConfiguracionProps) => {
                         <NotificationsIcon />
                     </ListItemIcon>
                     <ListItemText primary="Configurar notificaciones" />
+                </ListItemButton>
+
+                <ListItemButton sx={styles.itemsConfiguracion}>
+                    <ListItemIcon>
+                        <StyleIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Administrar tu plan" />
+                </ListItemButton>
+
+                <ListItemButton sx={styles.itemsConfiguracion}>
+                    <ListItemIcon>
+                        <VideoLibraryIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Restaurar Playlists" />
+                </ListItemButton>
+                <ListItemButton sx={styles.itemsConfiguracion}>
+                    <ListItemIcon>
+                        <DownloadIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Descargar datos cuenta" />
                 </ListItemButton>
 
             </List>

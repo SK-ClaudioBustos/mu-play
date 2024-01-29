@@ -6,6 +6,9 @@ import LabelCustom from "../../utils/LabelCustom"
 import Button from "@mui/material/Button"
 import Image from 'next/image';
 import CreateIcon from '@mui/icons-material/Create';
+import DiamondIcon from '@mui/icons-material/Diamond';
+import DeleteIcon from '@mui/icons-material/Delete';
+import Typography from "@mui/material/Typography"
 
 const styles = {
     item: {
@@ -19,7 +22,13 @@ const styles = {
     },
     avatar: {
         borderRadius: "50%"
-    }
+    },
+    itemCuenta: {
+        display: "flex",
+        alignItems: "center",
+        flexWrap: "wrap",
+        borderRadius: "5px"
+    },
 }
 
 export interface ITabProps {
@@ -29,7 +38,7 @@ export interface ITabProps {
 const TabPerfil = (props: ITabProps) => {
     const { value } = props;
     return (
-        <Grid item xs={12} sx={{ display: value === 0 ? "initial" : "none" }}>
+        <Grid item xs={12} sx={{ display: value === 1 ? "initial" : "none" }}>
             <Grid container rowSpacing={{ xs: 1, sm: 2, md: 4 }}>
                 <Grid item xs={12} >
                     <Grid container>
@@ -52,6 +61,21 @@ const TabPerfil = (props: ITabProps) => {
                         </Grid>
                     ))
                 }
+                <Grid item xs={6}>
+                    <LabelCustom primary={"Muplay Free"} secondary={"Tu plan"} colorP="#00613C" colorS="#1E9467" />
+                </Grid>
+
+                <Grid item xs={6} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <Button color='info' startIcon={<DiamondIcon />}>
+                        Cambiar a Premium
+                    </Button>
+                </Grid>
+
+                <Grid item xs={12} sx={styles.itemCuenta}>
+                    <Button startIcon={<DeleteIcon />} color="error" >
+                        Eliminar cuenta
+                    </Button>
+                </Grid>
             </Grid>
 
         </Grid>
