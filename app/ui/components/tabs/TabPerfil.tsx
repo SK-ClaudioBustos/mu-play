@@ -1,35 +1,14 @@
+import CreateIcon from '@mui/icons-material/Create'
+import DeleteIcon from '@mui/icons-material/Delete'
+import DiamondIcon from '@mui/icons-material/Diamond'
 import Box from "@mui/material/Box"
+import Button from "@mui/material/Button"
 import Grid from "@mui/material/Grid"
 import Tooltip from "@mui/material/Tooltip"
+import Image from 'next/image'
 import profileFields from "../../data/profileFields"
 import LabelCustom from "../../utils/LabelCustom"
-import Button from "@mui/material/Button"
-import Image from 'next/image';
-import CreateIcon from '@mui/icons-material/Create';
-import DiamondIcon from '@mui/icons-material/Diamond';
-import DeleteIcon from '@mui/icons-material/Delete';
-import Typography from "@mui/material/Typography"
-
-const styles = {
-    item: {
-        display: "flex",
-        alignItems: "center"
-    },
-    containerButton: {
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    avatar: {
-        borderRadius: "50%"
-    },
-    itemCuenta: {
-        display: "flex",
-        alignItems: "center",
-        flexWrap: "wrap",
-        borderRadius: "5px"
-    },
-}
+import tpStyle from '../../utils/styles/tabPerfil'
 
 export interface ITabProps {
     value: number
@@ -43,10 +22,10 @@ const TabPerfil = (props: ITabProps) => {
                 <Grid item xs={12} >
                     <Grid container>
                         <Grid item xs={11}>
-                            <Image alt="Imagen de perfil" width="100" height="100" src="/img/profileDefault.jpg" style={styles.avatar} />
+                            <Image alt="Imagen de perfil" width="100" height="100" src="/img/profileDefault.jpg" style={tpStyle.avatar} />
                         </Grid>
                         <Grid item xs={1}>
-                            <Box sx={styles.containerButton}>
+                            <Box sx={tpStyle.containerButton}>
                                 <Tooltip title="Editar perfil">
                                     <Button startIcon={<CreateIcon />} color="secondary" />
                                 </Tooltip>
@@ -56,7 +35,7 @@ const TabPerfil = (props: ITabProps) => {
                 </Grid>
                 {
                     profileFields.map(({ label, text }, key) => (
-                        <Grid sx={styles.item} item xs={6} key={key}>
+                        <Grid sx={tpStyle.item} item xs={6} key={key}>
                             <LabelCustom primary={text} secondary={label} colorP="#00613C" colorS="#1E9467" />
                         </Grid>
                     ))
@@ -71,7 +50,7 @@ const TabPerfil = (props: ITabProps) => {
                     </Button>
                 </Grid>
 
-                <Grid item xs={12} sx={styles.itemCuenta}>
+                <Grid item xs={12} sx={tpStyle.itemCuenta}>
                     <Button startIcon={<DeleteIcon />} color="error" >
                         Eliminar cuenta
                     </Button>

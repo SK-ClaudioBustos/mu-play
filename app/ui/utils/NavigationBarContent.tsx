@@ -3,39 +3,10 @@ import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Box, Button, IconButton, Menu, MenuItem, Typography } from "@mui/material";
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { MouseEvent, useState } from "react";
-import { usePathname } from 'next/navigation'
+import nbcStyle from './styles/navigationBarContent';
 
-const styles = {
-    icon1: { color: "#96FAD4", display: { xs: 'none', md: 'flex' }, mr: 1 },
-    typo1: {
-        mr: 2,
-        display: { xs: 'none', md: 'flex' },
-        fontFamily: 'monospace',
-        fontWeight: 700,
-        letterSpacing: '.3rem',
-        color: '#96FAD4',
-        textDecoration: 'none',
-    },
-    box1: { flexGrow: 1, display: { xs: 'none', md: 'flex' } },
-    link: { my: 2, color: '#41E0A3', display: 'block' },
-    linkSelected: { my: 2, color: '#96FAD4', display: 'block' },
-    box2: { flexGrow: 1, display: { xs: 'flex', md: 'none' } },
-    menu: {
-        display: { xs: 'block', md: 'none' }
-    },
-    icon2: { display: { xs: 'flex', md: 'none' }, mr: 1 },
-    typo2: {
-        mr: 2,
-        display: { xs: 'flex', md: 'none' },
-        flexGrow: 1,
-        fontFamily: 'monospace',
-        fontWeight: 700,
-        letterSpacing: '.3rem',
-        color: '#96FAD4',
-        textDecoration: 'none',
-    },
-}
 
 const pages = [
     {
@@ -67,20 +38,20 @@ const NavigationBarContent = () => {
     };
     return (
         <>
-            <LibraryMusicIcon sx={styles.icon1} />
+            <LibraryMusicIcon sx={nbcStyle.icon1} />
             <Typography
                 variant="h6"
                 noWrap
-                sx={styles.typo1}
+                sx={nbcStyle.typo1}
             >
-                    MuPlay
+                MuPlay
             </Typography>
-            <Box sx={styles.box1}>
-                {pages.map(({titulo, url},key) => (
+            <Box sx={nbcStyle.box1}>
+                {pages.map(({ titulo, url }, key) => (
                     <Link href={url} key={key}>
                         <Button
                             onClick={handleCloseNavMenu}
-                            sx={ url === pathname ? styles.linkSelected : styles.link }
+                            sx={url === pathname ? nbcStyle.linkSelected : nbcStyle.link}
                         >
                             {titulo}
                         </Button>
@@ -88,7 +59,7 @@ const NavigationBarContent = () => {
                 ))}
             </Box>
 
-            <Box sx={styles.box2}>
+            <Box sx={nbcStyle.box2}>
                 <IconButton
                     size="large"
                     aria-label="account of current user"
@@ -113,9 +84,9 @@ const NavigationBarContent = () => {
                     }}
                     open={Boolean(anchorElNav)}
                     onClose={handleCloseNavMenu}
-                    sx={styles.menu}
+                    sx={nbcStyle.menu}
                 >
-                    {pages.map(({titulo, url}) => (
+                    {pages.map(({ titulo, url }) => (
                         <Link href={url} key={url}>
                             <MenuItem >
                                 <Typography textAlign="center">{titulo}</Typography>
@@ -124,13 +95,13 @@ const NavigationBarContent = () => {
                     ))}
                 </Menu>
             </Box>
-            <LibraryMusicIcon sx={styles.icon2} />
+            <LibraryMusicIcon sx={nbcStyle.icon2} />
             <Typography
                 variant="h5"
                 noWrap
                 component="a"
                 href="#app-bar-with-responsive-menu"
-                sx={styles.typo2}
+                sx={nbcStyle.typo2}
             >
                 MuPlay
             </Typography>

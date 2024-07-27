@@ -8,6 +8,7 @@ import Tooltip from "@mui/material/Tooltip";
 import Image from "next/image";
 import { useState } from "react";
 import LabelCustom from "../utils/LabelCustom";
+import lrStyle from '../utils/styles/listaReproduccion';
 
 interface IListaReproduccionProps {
     nombre: string
@@ -16,38 +17,21 @@ interface IListaReproduccionProps {
     descripcion?: string
 }
 
-const st = {
-    item: {
-        backgroundColor: "#54E8B0",
-        padding: "0",
-        boxShadow: "0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)",
-        margin: "10px 0"
-    },
-    containerImage: {
-        display: "flex",
-        justifyContent: "center"
-    },
-    containerText: {
-        display: "flex",
-        alignItems: "center"
-    }
-}
-
 const ListaReproduccion = (props: IListaReproduccionProps) => {
     const { nombre, imagen, starred, descripcion } = props;
     const [star, setStar] = useState(starred);
     return (
-        <Grid item xs={12} sx={st.item}>
+        <Grid item xs={12} sx={lrStyle.item}>
             <Grid container>
-                <Grid item xs={2} sx={st.containerImage}>
+                <Grid item xs={2} sx={lrStyle.containerImage}>
                     <Image src={imagen} width={120} height={120} priority alt="portada lista de reproducion" />
                 </Grid>
-                <Grid item xs={8} sx={st.containerText}>
+                <Grid item xs={8} sx={lrStyle.containerText}>
                     <Box>
                         <LabelCustom primary={nombre} secondary={descripcion as string} colorP="#00613C" colorS="#1E9467" altern={true} />
                     </Box>
                 </Grid>
-                <Grid item xs={2} sx={st.containerText}>
+                <Grid item xs={2} sx={lrStyle.containerText}>
                     <IconButton>
                         <Tooltip title="Eliminar lista de reproducción">
                             <DeleteIcon color="error" />

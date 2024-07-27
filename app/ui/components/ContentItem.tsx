@@ -5,25 +5,7 @@ import Grid from "@mui/material/Grid"
 import Image from 'next/image'
 import LabelCustom from "../utils/LabelCustom"
 import { IitemData } from "../hooks/useFetch"
-
-const st = {
-    grid: {
-        display: "flex",
-        justifyContent: "center"
-    },
-    card: {
-        display: 'flex',
-        width: "500px",
-        backgroundColor: "#54E8B0"
-    },
-    box: {
-        display: "flex",
-        alignItems: "center"
-    },
-    content: { 
-        flex: '1 0 auto'
-    },
-}
+import ciStyle from "../utils/styles/contentItem"
 
 const ContentItem = (props: IitemData) => {
     const {
@@ -32,8 +14,8 @@ const ContentItem = (props: IitemData) => {
         image,
     } = props;
     return (
-        <Grid item xs={6} sx={st.grid}>
-            <Card sx={st.card}>
+        <Grid item xs={6} sx={ciStyle.grid}>
+            <Card sx={ciStyle.card}>
                 <Image
                     priority
                     height="151"
@@ -41,8 +23,8 @@ const ContentItem = (props: IitemData) => {
                     alt="imagen de album"
                     src={image}
                 />
-                <Box sx={st.box}>
-                    <CardContent sx={st.content}>
+                <Box sx={ciStyle.box}>
+                    <CardContent sx={ciStyle.content}>
                         <LabelCustom primary={song || "---"} secondary={artist || "---"} colorP="#00613C" colorS="#1E9467"/>
                     </CardContent>
                 </Box>

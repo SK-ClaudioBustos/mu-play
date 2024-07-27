@@ -13,21 +13,7 @@ import Link from 'next/link';
 import { MouseEvent, useState } from 'react';
 import settings from '../data/itemsSettingsLinks';
 import NavigationBarContent from './NavigationBarContent';
-
-const styles = {
-  box: {
-    flexGrow: 0,
-  },
-  menu: {
-    mt: '45px',
-  },
-  iconButton: {
-    p: 0
-  },
-  settingsItem: {
-    color: "#00613C"
-  }
-}
+import nbstyle from './styles/navigationBar';
 
 function NavigationBar() {
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
@@ -43,15 +29,15 @@ function NavigationBar() {
     <Container maxWidth="xl">
       <Toolbar disableGutters>
         <NavigationBarContent />
-        <Box sx={styles.box}>
+        <Box sx={nbstyle.box}>
           <Tooltip title="Mostrar opciones">
-            <IconButton onClick={handleOpenUserMenu} sx={styles.iconButton}>
+            <IconButton onClick={handleOpenUserMenu} sx={nbstyle.iconButton}>
               <Avatar alt="Claudio Bustos" src="img/profileDefault.jpg" />
             </IconButton>
           </Tooltip>
           <Menu
             open={Boolean(anchorElUser)}
-            sx={styles.menu}
+            sx={nbstyle.menu}
             id="menu-appbar"
             anchorEl={anchorElUser}
             anchorOrigin={{
@@ -68,7 +54,7 @@ function NavigationBar() {
             {
               settings.map(({ titulo, url }, key) => (
                 <MenuItem key={key} onClick={handleCloseUserMenu}>
-                  <Link href={url} style={styles.settingsItem}>
+                  <Link href={url} style={nbstyle.settingsItem}>
                     <Typography textAlign="center">{titulo}</Typography>
                   </Link>
                 </MenuItem>

@@ -5,44 +5,25 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import IconButton from "@mui/material/IconButton";
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
-
-const styles = {
-    box: {
-        width: "100%",
-        height: "70px",
-        backgroundColor: "#50C799",
-        padding: "0px"
-    },
-    grid: {
-        padding: "15px",
-        height: "100%"
-    },
-    iconButton: { 
-        color: "#96FAD4" 
-    },
-    text: {
-        color: "#96FAD4",
-        textAlign: "end"
-    }
-}
+import footerStyle from "./styles/footer";
 
 const FooterCustom = () => {
     return (
-        <Box sx={styles.box}>
-            <Grid sx={styles.grid} container spacing={0}>
+        <Box sx={footerStyle.box}>
+            <Grid sx={footerStyle.grid} container spacing={0}>
                 <Grid item xs={12} sm={6}>
-                    <IconButton sx={styles.iconButton}>
+                    <IconButton sx={footerStyle.iconButton}>
                         <InstagramIcon />
                     </IconButton>
-                    <IconButton sx={styles.iconButton}>
+                    <IconButton sx={footerStyle.iconButton}>
                         <TwitterIcon />
                     </IconButton>
-                    <IconButton sx={styles.iconButton}>
+                    <IconButton sx={footerStyle.iconButton}>
                         <FacebookIcon />
                     </IconButton>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <Typography sx={styles.text}>
+                    <Typography sx={footerStyle.text}>
                         Claudio Bustos(2024) &#169;
                     </Typography>
                 </Grid>

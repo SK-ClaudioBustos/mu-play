@@ -1,35 +1,15 @@
 import { Box, Container, Typography } from "@mui/material"
-
-const styles = {
-  container: {
-    height: "500px",
-    marginTop: "35px",
-    marginBottom: "35px",
-    display: "flex",
-    justifyContent: "left",
-    alignItems: "center",
-  },
-  box: {
-    backgroundColor: "#CCFFEB",
-    height: "2px",
-    width: "730px",
-    marginBottom: "20px"
-  },
-  text: {
-    display: "block",
-    color: "#CCFFEB",
-  }
-}
+import wpStyle from "../utils/styles/welcomePanel"
 
 const WelcomePanel = () => {
   return (
-    <Container sx={styles.container}>
+    <Container sx={wpStyle.container}>
       <div>
-        <Typography sx={styles.text} fontSize={50}>
+        <Typography sx={wpStyle.text} fontSize={50}>
           Bienvenido a mi tercer proyecto
         </Typography>
-        <Box sx={styles.box} />
-        <Typography sx={styles.text} fontSize={15}>
+        <Box sx={wpStyle.box} />
+        <Typography sx={wpStyle.text} fontSize={15}>
           Se trata de un proyecto que busca simular ser una pagina web para escuchar musica
         </Typography>
       </div>
