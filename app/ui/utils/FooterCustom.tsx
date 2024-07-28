@@ -23,7 +23,7 @@ const FooterCustom = () => {
                     </IconButton>
                 </Grid>
                 <Grid item xs={6} sm={6} display={"flex"} justifyContent={"end"} alignItems={"center"}>
-                    <Typography sx={footerStyle.text}>
+                    <Typography sx={footerStyle.text} fontSize={"0.9rem"}>
                         Claudio Bustos(2024) &#169;
                     </Typography>
                 </Grid>
