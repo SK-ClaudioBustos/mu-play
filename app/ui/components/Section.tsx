@@ -1,25 +1,25 @@
 import Box from "@mui/material/Box"
 import Typography from "@mui/material/Typography"
-import { IsearchParamsProps } from "../hooks/useFetch"
-import ContentBox from "./ContentBox"
 import sectionStyle from "../utils/styles/section"
+import ContentBox from "./ContentBox"
+import { ContentData } from "../data/data_sections"
 
 interface SectionProps {
-    title: string
-    content: IsearchParamsProps[]
+    seccion_name: string
+    items: ContentData[];
 }
 
 const Section = (props: SectionProps) => {
-    const { title, content } = props;
+    const { seccion_name, items } = props;
     return (
         <>
             <Box sx={sectionStyle.box}>
                 <Typography sx={sectionStyle.title} fontSize={35}>
-                    {title}
+                    {seccion_name}
                 </Typography>
             </Box>
             <div>
-                <ContentBox searchQuery={content}/>
+                <ContentBox content={items} />
             </div>
         </>
     )

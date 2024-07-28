@@ -11,7 +11,7 @@ import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
 import { MouseEvent, useState } from 'react';
-import settings from '../data/itemsSettingsLinks';
+import settings from '../data/items_settings_links';
 import NavigationBarContent from './NavigationBarContent';
 import nbstyle from './styles/navigationBar';
 

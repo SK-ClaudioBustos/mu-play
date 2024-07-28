@@ -4,10 +4,10 @@ import CardContent from "@mui/material/CardContent"
 import Grid from "@mui/material/Grid"
 import Image from 'next/image'
 import LabelCustom from "../utils/LabelCustom"
-import { IitemData } from "../hooks/useFetch"
 import ciStyle from "../utils/styles/contentItem"
+import { ContentData } from "../data/data_sections"
 
-const ContentItem = (props: IitemData) => {
+const ContentItem = (props: ContentData) => {
     const {
         song,
         artist,
@@ -25,7 +25,7 @@ const ContentItem = (props: IitemData) => {
                 />
                 <Box sx={ciStyle.box}>
                     <CardContent sx={ciStyle.content}>
-                        <LabelCustom primary={song || "---"} secondary={artist || "---"} colorP="#00613C" colorS="#1E9467"/>
+                        <LabelCustom primary={song || "---"} secondary={artist || "---"} colorP="#00613C" colorS="#1E9467" />
                     </CardContent>
                 </Box>
             </Card>

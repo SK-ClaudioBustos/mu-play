@@ -1,7 +1,7 @@
 import { Container } from "@mui/material";
 import BarraBusqueda from "../ui/components/BarraBusqueda";
 import Section from "../ui/components/Section";
-import { secciones } from '../ui/data/sections';
+import data from "../ui/data/data_sections";
 
 const Page = () => {
   return (
@@ -9,8 +9,8 @@ const Page = () => {
       <BarraBusqueda />
       <>
         {
-          secciones.map((seccion, key) => (
-            <Section title={seccion.title} content={seccion.content} key={key} />
+          data.map((seccion_data, key) => (
+            <Section seccion_name={seccion_data.section_name} items={seccion_data.items} key={key} />
           ))
         }
       </>
