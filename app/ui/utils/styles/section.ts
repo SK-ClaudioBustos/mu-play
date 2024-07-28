@@ -1,13 +1,14 @@
 const sectionStyle = {
     box: {
         paddingLeft: "10px",
-        height: "70px",
+        maxHeight: "70px",
         display: "flex",
         alignItems: "center",
         marginTop: "100px"
     },
     title: {
-        color: "#00613C"
+        color: "#00613C",
+        fontSize: "3rem"
     }
 }
 

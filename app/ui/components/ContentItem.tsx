@@ -3,9 +3,9 @@ import Card from "@mui/material/Card"
 import CardContent from "@mui/material/CardContent"
 import Grid from "@mui/material/Grid"
 import Image from 'next/image'
+import { ContentData } from "../data/data_sections"
 import LabelCustom from "../utils/LabelCustom"
 import ciStyle from "../utils/styles/contentItem"
-import { ContentData } from "../data/data_sections"
 
 const ContentItem = (props: ContentData) => {
     const {
@@ -14,12 +14,12 @@ const ContentItem = (props: ContentData) => {
         image,
     } = props;
     return (
-        <Grid item xs={6} sx={ciStyle.grid}>
+        <Grid item md={6} sm={12} xs={12}>
             <Card sx={ciStyle.card}>
                 <Image
                     priority
-                    height="151"
-                    width="151"
+                    height="150"
+                    width="150"
                     alt="imagen de album"
                     src={image}
                 />

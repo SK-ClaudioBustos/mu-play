@@ -1,8 +1,8 @@
 import Box from "@mui/material/Box"
 import Typography from "@mui/material/Typography"
+import { ContentData } from "../data/data_sections"
 import sectionStyle from "../utils/styles/section"
 import ContentBox from "./ContentBox"
-import { ContentData } from "../data/data_sections"
 
 interface SectionProps {
     seccion_name: string
@@ -14,13 +14,11 @@ const Section = (props: SectionProps) => {
     return (
         <>
             <Box sx={sectionStyle.box}>
-                <Typography sx={sectionStyle.title} fontSize={35}>
+                <Typography sx={sectionStyle.title}>
                     {seccion_name}
                 </Typography>
             </Box>
-            <div>
-                <ContentBox content={items} />
-            </div>
+            <ContentBox content={items} />
         </>
     )
 }

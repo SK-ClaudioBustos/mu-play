@@ -11,37 +11,23 @@ interface ILabelCustomProps {
 }
 
 const styles = {
-    box: { margin: 0, padding: 0 }
+    box: {
+        margin: 0,
+        width: "75%",
+        padding: 0,
+    }
 }
+
 const LabelCustom = (props: ILabelCustomProps) => {
-    const { primary, secondary="", colorP, colorS, altern } = props;
+    const { primary, secondary = "", colorP = "#000", colorS = "#c1c2c3", altern = false } = props;
     return (
         <Box sx={styles.box}>
-
-            {
-                altern
-                    ? (
-                        <>
-                            <Typography fontSize={20} color={colorP || "#000"}>
-                                {primary}
-                            </Typography>
-                            <Typography fontSize={13} color={colorS || "#c1c2c3"}>
-                                {secondary}
-                            </Typography>
-                        </>
-                    )
-                    : (
-                        <>
-                            <Typography fontSize={13} color={colorS || "#c1c2c3"}>
-                                {secondary}
-                            </Typography>
-                            <Typography fontSize={20} color={colorP || "#000"}>
-                                {primary}
-                            </Typography>
-                        </>
-                    )
-            }
-
+            <Typography fontSize={altern ? "1.6rem" : "1.1rem"} color={colorS}>
+                {altern ? primary : secondary}
+            </Typography>
+            <Typography fontSize={altern ? "1.1rem" : "1.6rem"} color={colorP}>
+                {altern ? secondary : primary}
+            </Typography>
         </Box >
     )
 }

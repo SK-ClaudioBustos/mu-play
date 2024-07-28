@@ -1,20 +1,15 @@
 const ciStyle = {
-    grid: {
-        display: "flex",
-        justifyContent: "center"
-    },
     card: {
         display: 'flex',
-        width: "500px",
-        backgroundColor: "#54E8B0"
+        backgroundColor: "#54E8B0",
     },
     box: {
         display: "flex",
         alignItems: "center"
     },
     content: { 
-        flex: '1 0 auto'
-    },
+        padding: "0 5px",
+    }
 }
 
 export default ciStyle;
