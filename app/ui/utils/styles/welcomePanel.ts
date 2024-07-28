@@ -1,21 +1,19 @@
 const wpStyle = {
     container: {
-        height: "500px",
         marginTop: "35px",
         marginBottom: "35px",
         display: "flex",
         justifyContent: "left",
         alignItems: "center",
     },
-    box: {
-        backgroundColor: "#CCFFEB",
-        height: "2px",
-        width: "730px",
-        marginBottom: "20px"
-    },
-    text: {
-        display: "block",
+    title: {
         color: "#CCFFEB",
+        fontSize: "2.5rem",
+        textDecoration: "underline"
+    },
+    body: {
+        color: "#CCFFEB",
+        fontSize: "1.5rem"
     }
 }
 

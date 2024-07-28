@@ -11,7 +11,7 @@ const FooterCustom = () => {
     return (
         <Box sx={footerStyle.box}>
             <Grid sx={footerStyle.grid} container spacing={0}>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={6} sm={6}>
                     <IconButton sx={footerStyle.iconButton}>
                         <InstagramIcon />
                     </IconButton>
@@ -22,7 +22,7 @@ const FooterCustom = () => {
                         <FacebookIcon />
                     </IconButton>
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={6} sm={6} display={"flex"} justifyContent={"end"} alignItems={"center"}>
                     <Typography sx={footerStyle.text}>
                         Claudio Bustos(2024) &#169;
                     </Typography>
