@@ -5,38 +5,10 @@ import { Box, Button, Container, Grid, Modal, TextField, Tooltip, Typography } f
 import { useState } from "react";
 import ListaReproduccion from "../ui/components/ListaReproduccion";
 import listas from '../ui/data/listas_reproduccion';
-
-const st = {
-  box: {
-    padding: "25px",
-    margin: "60px 0",
-  },
-  title: {
-    marginBottom: "20px",
-    color: "#00613C"
-  },
-  containerButton: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "right"
-  },
-  button: {
-    color: "#116149"
-  },
-  modal: {
-    position: 'absolute' as 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    backgroundColor: '#50C799',
-    padding: "10px 30px",
-  }
-}
+import mlEstilos from '../ui/utils/styles/misListas';
 
 const Page = () => {
   const [open, setOpen] = useState(false);
-
   const handleShow = () => {
     setOpen(true);
   }
@@ -47,32 +19,39 @@ const Page = () => {
 
   return (
     <Container>
-      <Box sx={st.box}>
+      <Box sx={mlEstilos.box}>
         <Grid container>
-
           <Grid item xs={12}>
             <Grid container>
-              <Grid item xs={6}>
-                <Typography sx={st.title} fontSize={50}>
-                  Listas de Reproducción
+              <Grid item md={10} sm={12} xs={12}>
+                <Typography sx={mlEstilos.title}>
+                  Mis Listas de Reproducción
                 </Typography>
               </Grid>
-              <Grid item xs={6} sx={st.containerButton}>
+              <Grid item md={2} sm={12} xs={12} sx={mlEstilos.containerButton}>
                 <Tooltip title="Agregar nueva lista de reproducción">
-                  <Button onClick={handleShow} sx={st.button} startIcon={<AddBoxIcon></AddBoxIcon>}>
+                  <Button onClick={handleShow} sx={mlEstilos.button} startIcon={<AddBoxIcon></AddBoxIcon>}>
                     Agregar
                   </Button>
                 </Tooltip>
               </Grid>
             </Grid>
           </Grid>
-          <>
-            {
-              listas.map((lista: any, key: number) => (
-                <ListaReproduccion nombre={lista.nombre} starred={lista.starred} imagen={lista.image} key={key} descripcion={lista.descripcion} />
-              ))
-            }
-          </>
+          <Grid item xs={12} marginTop="0.7rem">
+            <Grid container>
+              {
+                listas.map((lista: any, key: number) => (
+                  <ListaReproduccion
+                    nombre={lista.nombre}
+                    starred={lista.starred}
+                    imagen={lista.image}
+                    key={key}
+                    descripcion={lista.descripcion}
+                  />
+                ))
+              }
+            </Grid>
+          </Grid>
         </Grid>
         {
           open &&
@@ -97,7 +76,7 @@ const ModalCustom = (props: IModalCustomProps) => {
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <Box sx={st.modal}>
+      <Box sx={mlEstilos.modal}>
         <Grid container rowSpacing={3}>
           <Grid item xs={12}>
             <Typography>
@@ -111,7 +90,7 @@ const ModalCustom = (props: IModalCustomProps) => {
             <TextField fullWidth color="success" variant="standard" label="Descripción" />
           </Grid>
           <Grid item xs={12}>
-            <Box sx={st.containerButton}>
+            <Box sx={mlEstilos.containerButton}>
               <Button color="success" onClick={handleClose}>
                 Aceptar
               </Button>
