@@ -1,6 +1,6 @@
 const cbStyle = {
     box: {
-        margin: "30px 0 70px 0",
+        margin: "0 0 70px 0",
         padding: "40px 0"
     },
     grid: {

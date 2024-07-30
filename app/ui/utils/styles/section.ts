@@ -4,11 +4,11 @@ const sectionStyle = {
         maxHeight: "70px",
         display: "flex",
         alignItems: "center",
-        marginTop: "100px"
+        marginTop: "4rem"
     },
     title: {
         color: "#00613C",
-        fontSize: "3rem"
+        fontSize: "5.5vw"
     }
 }
 

@@ -1,5 +1,6 @@
 "use client"
 
+import { useMediaQuery } from "@mui/material"
 import Box from "@mui/material/Box"
 import Card from "@mui/material/Card"
 import CardContent from "@mui/material/CardContent"
@@ -8,7 +9,6 @@ import Image from 'next/image'
 import { ContentData } from "../data/data_sections"
 import LabelCustom from "../utils/LabelCustom"
 import ciStyle from "../utils/styles/contentItem"
-import { useMediaQuery } from "@mui/material"
 
 const ContentItem = (props: ContentData) => {
     const {
@@ -35,8 +35,8 @@ const ContentItem = (props: ContentData) => {
                             secondary={artist || "---"}
                             colorP="#00613C"
                             colorS="#1E9467"
-                            fs1={matches ? "3vw" : null}
-                            fs2={matches ? "3vw" : null}
+                            fs1={matches ? "3.8vw" : "1.5rem"}
+                            fs2={matches ? "3.3vw" : "1.5rem"}
                         />
                     </CardContent>
                 </Box>
