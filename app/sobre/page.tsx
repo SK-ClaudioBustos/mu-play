@@ -3,32 +3,17 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import FilterFramesIcon from '@mui/icons-material/FilterFrames';
 import { Box, Container, Grid, List, ListItem, ListItemIcon, Typography } from "@mui/material";
 import LabelCustom from '../ui/utils/LabelCustom';
-
-const st = {
-  container: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  box: {
-    maxHeight: "350px",
-    maxWidth: "600px",
-    margin: "70px 0",
-    padding: "20px 80px",
-    backgroundColor: "#54E8B0"
-  },
-  description : {
-    color: "#00613C"
-  }
-}
+import sobreStyle from '../ui/utils/styles/sobrePage';
 
 const Page = () => {
+  const fs1 = "0.9rem";
+  const fs2 = "0.8rem";
+
   return (
-    <Container sx={st.container}>
-      <Box sx={st.box}>
-        <Grid container>
+    <Container sx={sobreStyle.container}>
+      <Grid container sx={sobreStyle.box}>
           <Grid item xs={12}>
-            <Typography sx={st.description} fontSize={20}>
+            <Typography sx={sobreStyle.description}>
               Esta pagina fue creada como un proyecto mas complejo que los anteriores, utilize muchas tecnologias aprendidas
               durante mi pasantía en el Ministerio Publico Fiscal, entre ellas estan:
             </Typography>
@@ -39,7 +24,15 @@ const Page = () => {
                 <ListItemIcon>
                   <ChangeHistoryIcon />
                 </ListItemIcon>
-                <LabelCustom primary="Next Js" secondary="14.0.4" colorP="#00613C" colorS="#1E9467" altern={true} />
+                <LabelCustom
+                  primary="Next Js"
+                  secondary="14.0.4"
+                  colorP="#00613C"
+                  colorS="#1E9467"
+                  altern={true}
+                  fs1={fs1}
+                  fs2={fs2}
+                />
               </ListItem>
             </List>
             <List>
@@ -47,7 +40,15 @@ const Page = () => {
                 <ListItemIcon>
                   <FilterFramesIcon />
                 </ListItemIcon>
-                <LabelCustom primary="React" secondary="18" colorP="#00613C" colorS="#1E9467" altern={true} />
+                <LabelCustom
+                  primary="React"
+                  secondary="18"
+                  colorP="#00613C"
+                  colorS="#1E9467"
+                  altern={true}
+                  fs1={fs1}
+                  fs2={fs2}
+                />
               </ListItem>
             </List>
             <List>
@@ -55,12 +56,19 @@ const Page = () => {
                 <ListItemIcon>
                   <DashboardIcon />
                 </ListItemIcon>
-                <LabelCustom primary="MUI Component Library" secondary="5.15.2" colorP="#00613C" colorS="#1E9467" altern={true} />
+                <LabelCustom
+                  primary="MUI Component Library"
+                  secondary="5.15.2"
+                  colorP="#00613C"
+                  colorS="#1E9467"
+                  altern={true}
+                  fs1={fs1}
+                  fs2={fs2}
+                />
               </ListItem>
             </List>
           </Grid>
         </Grid>
-      </Box>
     </Container>
   )
 }
