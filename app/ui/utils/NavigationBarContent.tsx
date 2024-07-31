@@ -46,6 +46,7 @@ const NavigationBarContent = () => {
             >
                 MuPlay
             </Typography>
+
             <Box sx={nbcStyle.box1}>
                 {pages.map(({ titulo, url }, key) => (
                     <Link href={url} key={key}>
@@ -62,7 +63,7 @@ const NavigationBarContent = () => {
             <Box sx={nbcStyle.box2}>
                 <IconButton
                     size="large"
-                    aria-label="account of current user"
+                    aria-label="cuenta del usuario actual"
                     aria-controls="menu-appbar"
                     aria-haspopup="true"
                     onClick={handleOpenNavMenu}
@@ -83,11 +84,10 @@ const NavigationBarContent = () => {
                         horizontal: 'left',
                     }}
                     open={Boolean(anchorElNav)}
-                    onClose={handleCloseNavMenu}
                     sx={nbcStyle.menu}
                 >
                     {pages.map(({ titulo, url }) => (
-                        <Link href={url} key={url}>
+                        <Link href={url} key={url} onClick={handleCloseNavMenu}>
                             <MenuItem >
                                 <Typography textAlign="center">{titulo}</Typography>
                             </MenuItem>
@@ -100,7 +100,6 @@ const NavigationBarContent = () => {
                 variant="h5"
                 noWrap
                 component="a"
-                href="#app-bar-with-responsive-menu"
                 sx={nbcStyle.typo2}
             >
                 MuPlay
