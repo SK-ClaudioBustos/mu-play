@@ -15,6 +15,10 @@ const profileFields = [
       label: "Correo Electrónico",
       text: "jhonDoe2000@gmail.com"
     },
+    {
+      label: "Tu plan",
+      text: "Muplay Free"
+    },
 ];
 
 export default profileFields;

@@ -1,5 +1,5 @@
 "use client"
-import { Box, Container, Grid, Tab, Tabs } from "@mui/material";
+import { Box, Container, Grid, Tab, Tabs, useMediaQuery } from "@mui/material";
 import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
 import { SyntheticEvent, useState } from "react";
 import TabConfiguracion from "../ui/components/tabs/TabConfiguracion";
@@ -14,6 +14,7 @@ const getActualTab = (searchParams: ReadonlyURLSearchParams) => {
 const Page = () => {
   const searchParams = useSearchParams();
   const [value, setValue] = useState<number>(getActualTab(searchParams));
+  const matches = useMediaQuery('(max-width:600px)');
   const handleChange = (e: SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
@@ -30,16 +31,16 @@ const Page = () => {
                 aria-label="basic tabs example"
                 textColor="primary"
                 indicatorColor="primary">
-                <Tab label="Configuración" {...a11yProps(0)} />
-                <Tab label="Perfil" {...a11yProps(1)} />
+                <Tab label="Configuración" {...a11yProps(matches, 0)} />
+                <Tab label="Perfil" {...a11yProps(matches, 1)} />
               </Tabs>
             </Box>
           </Grid>
 
           <Grid item xs={12}>
             <Grid container sx={uStyle.grid} rowSpacing={{ xs: 1, sm: 1, md: 1 }}>
-              <TabConfiguracion value={value} />
-              <TabPerfil value={value} />
+              <TabConfiguracion matches={matches} value={value} />
+              <TabPerfil matches={matches} value={value} />
             </Grid>
           </Grid>
         </Grid>
@@ -49,10 +50,11 @@ const Page = () => {
 }
 
 
-function a11yProps(index: number) {
+function a11yProps(matches: boolean, index: number) {
   return {
     id: `simple-tab-${index}`,
     'aria-controls': `simple-tabpanel-${index}`,
+    sx: { fontSize: matches ? "2.5vw" : "1.2rem" }
   };
 }
 

@@ -1,20 +1,56 @@
+import DownloadIcon from '@mui/icons-material/Download';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import PasswordIcon from '@mui/icons-material/Password';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VpnKeyIcon from '@mui/icons-material/VpnKey';
-import DownloadIcon from '@mui/icons-material/Download';
 import StyleIcon from '@mui/icons-material/Style';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import { Grid, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import tcStyle from '../../utils/styles/tabConfiguracion';
 
 interface ITabConfiguracionProps {
     value: number
+    matches: boolean
 }
 
 const TabConfiguracion = (props: ITabConfiguracionProps) => {
-    const { value } = props;
+    const { value, matches } = props;
+    const size = { fontSize: matches ? "2.5vw" : "1.2vw" };
+    const listItems = [
+        {
+            label: "Cambiar contraseña",
+            icon: <PasswordIcon sx={size} />
+        },
+        {
+            label: "Administrar aplicaciones",
+            icon: <PhoneIphoneIcon sx={size} />
+        },
+        {
+            label: "Doble factor",
+            icon: <VpnKeyIcon sx={size} />
+        },
+        {
+            label: "Configuración de privacidad",
+            icon: <VisibilityIcon sx={size} />
+        },
+        {
+            label: "Configurar notificaciones",
+            icon: <NotificationsIcon sx={size} />
+        },
+        {
+            label: "Administrar tu plan",
+            icon: <StyleIcon sx={size} />
+        },
+        {
+            label: "Restaurar Playlists",
+            icon: <VideoLibraryIcon sx={size} />
+        },
+        {
+            label: "Descargar datos cuenta",
+            icon: <DownloadIcon sx={size} />
+        }
+    ]
     return (
         <Grid item xs={12} sx={{ display: value === 0 ? "flex" : "none", justifyContent: "center" }}>
             <List
@@ -22,65 +58,22 @@ const TabConfiguracion = (props: ITabConfiguracionProps) => {
                 component="nav"
                 aria-labelledby="nested-list-subheader"
             >
-                <ListItemButton sx={tcStyle.itemsConfiguracion}>
-                    <ListItemIcon>
-                        <PasswordIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Cambiar contraseña" />
-                </ListItemButton>
-
-                <ListItemButton sx={tcStyle.itemsConfiguracion}>
-                    <ListItemIcon>
-                        <PhoneIphoneIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Administrar aplicaciones" />
-                </ListItemButton>
-
-                <ListItemButton sx={tcStyle.itemsConfiguracion}>
-                    <ListItemIcon>
-                        <VpnKeyIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Doble factor" />
-                </ListItemButton>
-
-                <ListItemButton sx={tcStyle.itemsConfiguracion}>
-                    <ListItemIcon>
-                        <VisibilityIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Configuración de privacidad" />
-                </ListItemButton>
-
-                <ListItemButton sx={tcStyle.itemsConfiguracion}>
-                    <ListItemIcon>
-                        <NotificationsIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Configurar notificaciones" />
-                </ListItemButton>
-
-                <ListItemButton sx={tcStyle.itemsConfiguracion}>
-                    <ListItemIcon>
-                        <StyleIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Administrar tu plan" />
-                </ListItemButton>
-
-                <ListItemButton sx={tcStyle.itemsConfiguracion}>
-                    <ListItemIcon>
-                        <VideoLibraryIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Restaurar Playlists" />
-                </ListItemButton>
-                <ListItemButton sx={tcStyle.itemsConfiguracion}>
-                    <ListItemIcon>
-                        <DownloadIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Descargar datos cuenta" />
-                </ListItemButton>
-
+                {
+                    listItems.map((item, key) => (
+                        <ListItemButton sx={tcStyle.itemsConfiguracion} key={key}>
+                            <ListItemIcon sx={{ minWidth: "6vw" }}>
+                                {item.icon}
+                            </ListItemIcon>
+                            <ListItemText
+                                primaryTypographyProps={{ style: size }} primary={item.label} />
+                        </ListItemButton>
+                    ))
+                }
             </List>
-        </Grid>
+        </Grid >
     )
 }
+
 
 
 export default TabConfiguracion

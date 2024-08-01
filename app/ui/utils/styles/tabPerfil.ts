@@ -10,13 +10,7 @@ const tpStyle = {
     },
     avatar: {
         borderRadius: "50%"
-    },
-    itemCuenta: {
-        display: "flex",
-        alignItems: "center",
-        flexWrap: "wrap",
-        borderRadius: "5px"
-    },
+    }
 }
 
 export default tpStyle;
