@@ -1,4 +1,4 @@
-import { color2 } from "./colors";
+import { color2, color4 } from "./colors";
 
 const mlEstilos = {
     box: {
@@ -23,7 +23,7 @@ const mlEstilos = {
         left: '50%',
         transform: 'translate(-50%, -50%)',
         width: 400,
-        backgroundColor: '#50C799',
+        backgroundColor: color4,
         padding: "10px 30px",
     }
 };

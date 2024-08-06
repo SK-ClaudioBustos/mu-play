@@ -1,8 +1,10 @@
+import { color3, color4 } from "./colors";
+
 const footerStyle = {
     box: {
         width: "100%",
         height: "70px",
-        backgroundColor: "#50C799",
+        backgroundColor: color4,
         padding: "0px"
     },
     grid: {
@@ -10,10 +12,10 @@ const footerStyle = {
         height: "100%"
     },
     iconButton: { 
-        color: "#96FAD4" 
+        color: color3 
     },
     text: {
-        color: "#96FAD4",
+        color: color3,
         textAlign: "end"
     }
 }

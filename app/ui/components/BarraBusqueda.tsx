@@ -3,11 +3,12 @@
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import { styled } from '@mui/material/styles';
+import { color5 } from '../utils/styles/colors';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: "#CCFFEB",
+    backgroundColor: color5,
     width: '100%',
     margin: "25px 0px 0px 0px",
     [theme.breakpoints.up('sm')]: {

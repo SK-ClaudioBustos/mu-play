@@ -1,8 +1,8 @@
-import { color2 } from "./colors";
+import { color2, color5 } from "./colors";
 
 const tcStyle = {
     itemsConfiguracion: {
-        backgroundColor: '#CCFFEB',
+        backgroundColor: color5,
         margin: "5px 0"
     },
     list: {

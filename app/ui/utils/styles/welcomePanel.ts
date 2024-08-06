@@ -1,3 +1,5 @@
+import { color5 } from "./colors";
+
 const wpStyle = {
     container: {
         marginTop: "35px",
@@ -7,11 +9,11 @@ const wpStyle = {
         alignItems: "center",
     },
     title: {
-        color: "#CCFFEB",
+        color: color5,
         textDecoration: "underline"
     },
     body: {
-        color: "#CCFFEB",
+        color: color5,
     }
 }
 
