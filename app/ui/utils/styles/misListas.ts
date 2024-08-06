@@ -6,7 +6,6 @@ const mlEstilos = {
     title: {
         marginBottom: "0.3rem",
         color: "#00613C",
-        fontSize: "2.2rem"
     },
     containerButton: {
         display: "flex",

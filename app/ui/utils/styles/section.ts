@@ -8,7 +8,6 @@ const sectionStyle = {
     },
     title: {
         color: "#00613C",
-        fontSize: "5.5vw"
     }
 }
 

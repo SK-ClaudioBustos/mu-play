@@ -8,12 +8,10 @@ const wpStyle = {
     },
     title: {
         color: "#CCFFEB",
-        fontSize: "2.5rem",
         textDecoration: "underline"
     },
     body: {
         color: "#CCFFEB",
-        fontSize: "1.5rem"
     }
 }
 

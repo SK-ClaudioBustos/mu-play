@@ -24,7 +24,7 @@ const Page = () => {
           <Grid item xs={12}>
             <Grid container>
               <Grid item md={10} sm={12} xs={12}>
-                <Typography sx={mlEstilos.title}>
+                <Typography variant='h4' sx={mlEstilos.title}>
                   Mis Listas de Reproducción
                 </Typography>
               </Grid>

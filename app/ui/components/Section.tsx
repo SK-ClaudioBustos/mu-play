@@ -14,7 +14,7 @@ const Section = (props: SectionProps) => {
     return (
         <>
             <Box sx={sectionStyle.box}>
-                <Typography sx={sectionStyle.title}>
+                <Typography variant="h4" sx={sectionStyle.title}>
                     {seccion_name}
                 </Typography>
             </Box>

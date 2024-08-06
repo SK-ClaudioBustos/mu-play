@@ -21,6 +21,7 @@ const ListaReproduccion = (props: IListaReproduccionProps) => {
     const { nombre, imagen, starred, descripcion } = props;
     const matches = useMediaQuery('(max-width:600px)');
     const [star, setStar] = useState(starred);
+    const iconsStyle = { fontSize: matches ? "4vw" : "1.6rem" };
     return (
         <Grid item xs={12} sx={lrStyle.item}>
             <Grid container>
@@ -43,20 +44,20 @@ const ListaReproduccion = (props: IListaReproduccionProps) => {
                         <Grid item md={2} sm={4} xs={12} sx={{ ...lrStyle.containerText, justifyContent: matches ? "end" : "normal" }}>
                             <IconButton>
                                 <Tooltip title="Reproducir lista de reproducción">
-                                    <PlayArrowIcon color="action" sx={{ fontSize: matches ? "4vw" : "1.6rem" }} />
+                                    <PlayArrowIcon color="action" sx={iconsStyle} />
                                 </Tooltip>
                             </IconButton>
                             <IconButton>
                                 <Tooltip title="Eliminar lista de reproducción">
-                                    <DeleteIcon color="error" sx={{ fontSize: matches ? "4vw" : "1.6rem" }} />
+                                    <DeleteIcon color="error" sx={iconsStyle} />
                                 </Tooltip>
                             </IconButton>
                             <IconButton onClick={() => setStar(!star)}>
                                 <Tooltip title={star ? "Desmarcar como favorita" : "Marcar como favorita"}>
                                     {
                                         star
-                                            ? <StarIcon color="success" sx={{ fontSize: matches ? "4vw" : "1.6rem" }} />
-                                            : <StarBorderIcon color="success" sx={{ fontSize: matches ? "4vw" : "1.6rem" }} />
+                                            ? <StarIcon color="success" sx={iconsStyle} />
+                                            : <StarBorderIcon color="success" sx={iconsStyle} />
 
                                     }
                                 </Tooltip>
