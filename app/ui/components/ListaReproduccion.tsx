@@ -10,6 +10,7 @@ import Image from "next/image";
 import { useState } from "react";
 import LabelCustom from "../utils/LabelCustom";
 import lrStyle from '../utils/styles/listaReproduccion';
+import { color2 } from '../utils/styles/colors';
 interface IListaReproduccionProps {
     nombre: string
     imagen: string
@@ -34,7 +35,7 @@ const ListaReproduccion = (props: IListaReproduccionProps) => {
                             <LabelCustom
                                 primary={nombre}
                                 secondary={descripcion as string}
-                                colorP="#00613C"
+                                colorP={color2}
                                 colorS="#1E9467"
                                 altern={true}
                                 fs1={matches ? "3vw" : null}

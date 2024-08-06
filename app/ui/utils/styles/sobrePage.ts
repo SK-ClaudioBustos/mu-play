@@ -1,3 +1,5 @@
+import { color1, color2 } from "./colors";
+
 const sobreStyle = {
     container: {
         display: "flex",
@@ -7,10 +9,10 @@ const sobreStyle = {
         minHeight: "350px",
         maxWidth: "600px",
         padding: "1rem 2rem",
-        backgroundColor: "#54E8B0"
+        backgroundColor: color1
     },
     description: {
-        color: "#00613C",
+        color: color2,
         fontSize: "1.1rem"
     }
 };

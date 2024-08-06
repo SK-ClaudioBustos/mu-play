@@ -1,3 +1,5 @@
+import { color2 } from "./colors";
+
 const tcStyle = {
     itemsConfiguracion: {
         backgroundColor: '#CCFFEB',
@@ -7,7 +9,7 @@ const tcStyle = {
         width: '100%',
         maxWidth: 360,
         backgroundColor: 'inherit',
-        color: "#00613C"
+        color: color2
     }
 }
 

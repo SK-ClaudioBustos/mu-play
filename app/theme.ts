@@ -1,6 +1,7 @@
 'use client'
 import { createTheme } from "@mui/material/styles";
 import { Kanit } from 'next/font/google';
+import { color1 } from "./ui/utils/styles/colors";
 
 const font = Kanit({ weight: "400", subsets: ['latin'] })
 
@@ -28,7 +29,7 @@ const theme = createTheme({
       styleOverrides: {
         paper: {
           boxShadow: "0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)",
-          backgroundColor: "#54e8b0",
+          backgroundColor: color1,
           borderRadius: "0px"
         }
       }

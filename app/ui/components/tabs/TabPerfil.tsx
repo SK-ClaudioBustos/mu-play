@@ -9,6 +9,7 @@ import Image from 'next/image'
 import profileFields from "../../data/profileFields"
 import LabelCustom from "../../utils/LabelCustom"
 import tpStyle from '../../utils/styles/tabPerfil'
+import { color2 } from '../../utils/styles/colors'
 
 export interface ITabProps {
     value: number
@@ -56,7 +57,7 @@ const TabPerfil = (props: ITabProps) => {
                             <LabelCustom
                                 primary={text}
                                 secondary={label}
-                                colorP="#00613C"
+                                colorP={color2}
                                 colorS="#1E9467"
                                 fs1={matches ? fs1 : fs2}
                                 fs2={matches ? "2vw" : "1.3vw"}

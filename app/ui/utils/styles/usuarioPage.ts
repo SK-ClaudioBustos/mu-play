@@ -1,3 +1,5 @@
+import { color1 } from "./colors";
+
 const uStyle = {
     container: {
         display: "flex",
@@ -6,7 +8,7 @@ const uStyle = {
     },
     box: {
         padding: "8vh 0",
-        backgroundColor: "#54E8B0",
+        backgroundColor: color1,
         margin: "2rem 0",
         display: "flex",
         justifyContent: "center",

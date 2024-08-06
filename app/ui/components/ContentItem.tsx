@@ -9,6 +9,7 @@ import Image from 'next/image'
 import { ContentData } from "../data/data_sections"
 import LabelCustom from "../utils/LabelCustom"
 import ciStyle from "../utils/styles/contentItem"
+import { color2 } from "../utils/styles/colors"
 
 const ContentItem = (props: ContentData) => {
     const {
@@ -33,7 +34,7 @@ const ContentItem = (props: ContentData) => {
                         <LabelCustom
                             primary={song || "---"}
                             secondary={artist || "---"}
-                            colorP="#00613C"
+                            colorP={color2}
                             colorS="#1E9467"
                             fs1={matches ? "3.8vw" : "1.5rem"}
                             fs2={matches ? "3.3vw" : "1.5rem"}

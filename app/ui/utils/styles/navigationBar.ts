@@ -1,3 +1,5 @@
+import { color2 } from "./colors";
+
 const nbstyle = {
     box: {
         flexGrow: 0,
@@ -9,7 +11,7 @@ const nbstyle = {
         p: 0
     },
     settingsItem: {
-        color: "#00613C"
+        color: color2
     }
 }
 

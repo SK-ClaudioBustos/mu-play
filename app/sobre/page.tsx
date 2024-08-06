@@ -4,6 +4,7 @@ import FilterFramesIcon from '@mui/icons-material/FilterFrames';
 import { Box, Container, Grid, List, ListItem, ListItemIcon, Typography } from "@mui/material";
 import LabelCustom from '../ui/utils/LabelCustom';
 import sobreStyle from '../ui/utils/styles/sobrePage';
+import { color2 } from '../ui/utils/styles/colors';
 
 const Page = () => {
   const fs1 = "0.9rem";
@@ -27,7 +28,7 @@ const Page = () => {
                 <LabelCustom
                   primary="Next Js"
                   secondary="14.0.4"
-                  colorP="#00613C"
+                  colorP={color2}
                   colorS="#1E9467"
                   altern={true}
                   fs1={fs1}
@@ -43,7 +44,7 @@ const Page = () => {
                 <LabelCustom
                   primary="React"
                   secondary="18"
-                  colorP="#00613C"
+                  colorP={color2}
                   colorS="#1E9467"
                   altern={true}
                   fs1={fs1}
@@ -59,7 +60,7 @@ const Page = () => {
                 <LabelCustom
                   primary="MUI Component Library"
                   secondary="5.15.2"
-                  colorP="#00613C"
+                  colorP={color2}
                   colorS="#1E9467"
                   altern={true}
                   fs1={fs1}

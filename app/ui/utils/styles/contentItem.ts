@@ -1,7 +1,9 @@
+import { color1 } from "./colors";
+
 const ciStyle = {
     card: {
         display: 'flex',
-        backgroundColor: "#54E8B0",
+        backgroundColor: color1,
     },
     box: {
         display: "flex",

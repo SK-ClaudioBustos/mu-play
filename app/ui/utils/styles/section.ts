@@ -1,3 +1,5 @@
+import { color2 } from "./colors";
+
 const sectionStyle = {
     box: {
         paddingLeft: "10px",
@@ -7,7 +9,7 @@ const sectionStyle = {
         marginTop: "4rem"
     },
     title: {
-        color: "#00613C",
+        color: color2,
     }
 }
 

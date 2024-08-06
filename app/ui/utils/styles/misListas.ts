@@ -1,3 +1,5 @@
+import { color2 } from "./colors";
+
 const mlEstilos = {
     box: {
         padding: "25px",
@@ -5,7 +7,7 @@ const mlEstilos = {
     },
     title: {
         marginBottom: "0.3rem",
-        color: "#00613C",
+        color: color2,
     },
     containerButton: {
         display: "flex",
