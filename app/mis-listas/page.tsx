@@ -46,7 +46,6 @@ const Page = () => {
                     starred={lista.starred}
                     imagen={lista.image}
                     key={key}
-                    descripcion={lista.descripcion}
                   />
                 ))
               }

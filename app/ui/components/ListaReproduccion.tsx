@@ -9,17 +9,16 @@ import Tooltip from "@mui/material/Tooltip";
 import Image from "next/image";
 import { useState } from "react";
 import LabelCustom from "../utils/LabelCustom";
-import lrStyle from '../utils/styles/listaReproduccion';
 import { color2 } from '../utils/styles/colors';
+import lrStyle from '../utils/styles/listaReproduccion';
 interface IListaReproduccionProps {
     nombre: string
     imagen: string
     starred: boolean
-    descripcion?: string
 }
 
 const ListaReproduccion = (props: IListaReproduccionProps) => {
-    const { nombre, imagen, starred, descripcion } = props;
+    const { nombre, imagen, starred } = props;
     const matches = useMediaQuery('(max-width:600px)');
     const [star, setStar] = useState(starred);
     const iconsStyle = { fontSize: matches ? "4vw" : "1.6rem" };
@@ -30,11 +29,13 @@ const ListaReproduccion = (props: IListaReproduccionProps) => {
                     <Image src={imagen} width={matches ? 90 : 120} height={matches ? 90 : 120} priority alt="portada lista de reproducion" />
                 </Grid>
                 <Grid item md={10} sm={9} xs={8} sx={{ display: "flex", alignItems: "center" }}>
-                    <Grid container>
-                        <Grid item md={10} sm={8} xs={12} sx={lrStyle.containerText}>
+                    <Grid container sx={{padding: matches ? "10px" : "0px"}}>
+                        <Grid item md={9} sm={8} xs={12} sx={{
+                            display: "flex",
+                            alignItems: "center",
+                        }}>
                             <LabelCustom
                                 primary={nombre}
-                                secondary={descripcion as string}
                                 colorP={color2}
                                 colorS="#1E9467"
                                 altern={true}
@@ -42,7 +43,11 @@ const ListaReproduccion = (props: IListaReproduccionProps) => {
                                 fs2={matches ? "3vw" : null}
                             />
                         </Grid>
-                        <Grid item md={2} sm={4} xs={12} sx={{ ...lrStyle.containerText, justifyContent: matches ? "end" : "normal" }}>
+                        <Grid item md={3} sm={4} xs={12} sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: matches ? "center" : "normal"
+                        }}>
                             <IconButton>
                                 <Tooltip title="Reproducir lista de reproducción">
                                     <PlayArrowIcon color="action" sx={iconsStyle} />

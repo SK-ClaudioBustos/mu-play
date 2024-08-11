@@ -10,10 +10,6 @@ const lrStyle = {
     containerImage: {
         display: "flex",
         justifyContent: "center"
-    },
-    containerText: {
-        display: "flex",
-        alignItems: "center"
     }
 }
 
