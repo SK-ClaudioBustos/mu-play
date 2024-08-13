@@ -43,7 +43,7 @@ const ContentItem = (props: ContentItemProps) => {
         <Grid item md={6} sm={12} xs={12}>
             <Card sx={ciStyle.card}>
                 <Grid container>
-                    <Grid item sm={10} xs={10} sx={{ display: "flex", flexDirection: "row" }}>
+                    <Grid item sm={10} xs={12} sx={{ display: "flex", flexDirection: "row" }}>
                         <Image
                             priority
                             width={matches ? 90 : 150}
@@ -64,13 +64,20 @@ const ContentItem = (props: ContentItemProps) => {
                             </CardContent>
                         </Box>
                     </Grid>
-                    <Grid item sm={2} xs={2} sx={{ display: "flex", alignItems: "center" }}>
-                        <IconButton>
-                            <Tooltip title="Reproducir">
-                                <PlayArrowIcon onClick={handlePlay} color="action" sx={{ fontSize: matches ? "4vw" : "1.6rem" }} />
-                            </Tooltip>
-                        </IconButton>
-                    </Grid>
+                    {
+                        matches
+                            ? null
+                            : (
+                                <Grid item sm={2} xs={2} sx={{ display: "flex", alignItems: "center" }}>
+                                    <IconButton>
+                                        <Tooltip title="Reproducir">
+                                            <PlayArrowIcon onClick={handlePlay} color="action" sx={{ fontSize: matches ? "4vw" : "1.6rem" }} />
+                                        </Tooltip>
+                                    </IconButton>
+                                </Grid>
+                            )
+                    }
+
                 </Grid>
             </Card>
         </Grid>

@@ -92,7 +92,7 @@ export default function Player(props: Props) {
                             }
                         </Box>
                     </Grid>
-                    <Grid item sm={12} xs={12} sx={{ display: "flex", alignItems: "center" }} paddingRight={"1rem"}>
+                    <Grid item sm={12} xs={12} sx={{ display: "flex", alignItems: "center" }}>
                         <Box sx={{ width: "-webkit-fill-available" }}>
                             <Slider
                                 aria-label="indicador tiempo"
@@ -129,7 +129,8 @@ export default function Player(props: Props) {
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'space-between',
-                                    height: "0.9rem"
+                                    height: "0.9rem",
+                                    marginTop: "5px"
                                 }}
                             >
                                 <TinyText>0:00</TinyText>

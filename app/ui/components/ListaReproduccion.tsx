@@ -9,7 +9,7 @@ import Tooltip from "@mui/material/Tooltip";
 import Image from "next/image";
 import { useState } from "react";
 import LabelCustom from "../utils/LabelCustom";
-import { color2 } from '../utils/styles/colors';
+import { color2, color3 } from '../utils/styles/colors';
 import lrStyle from '../utils/styles/listaReproduccion';
 interface IListaReproduccionProps {
     nombre: string
@@ -24,12 +24,16 @@ const ListaReproduccion = (props: IListaReproduccionProps) => {
     const iconsStyle = { fontSize: matches ? "4vw" : "1.6rem" };
     return (
         <Grid item xs={12} sx={lrStyle.item}>
-            <Grid container>
+            <Grid container sx={{
+                "&:hover": {
+                    backgroundColor: color3,
+                }
+            }}>
                 <Grid item md={2} sm={3} xs={4} sx={lrStyle.containerImage}>
                     <Image src={imagen} width={matches ? 90 : 120} height={matches ? 90 : 120} priority alt="portada lista de reproducion" />
                 </Grid>
                 <Grid item md={10} sm={9} xs={8} sx={{ display: "flex", alignItems: "center" }}>
-                    <Grid container sx={{padding: matches ? "10px" : "0px"}}>
+                    <Grid container sx={{ padding: matches ? "10px" : "0px" }}>
                         <Grid item md={9} sm={8} xs={12} sx={{
                             display: "flex",
                             alignItems: "center",
@@ -48,11 +52,17 @@ const ListaReproduccion = (props: IListaReproduccionProps) => {
                             alignItems: "center",
                             justifyContent: matches ? "center" : "normal"
                         }}>
-                            <IconButton>
-                                <Tooltip title="Reproducir lista de reproducción">
-                                    <PlayArrowIcon color="action" sx={iconsStyle} />
-                                </Tooltip>
-                            </IconButton>
+                            {
+                                matches
+                                    ? null
+                                    : (
+                                        <IconButton>
+                                            <Tooltip title="Reproducir lista de reproducción">
+                                                <PlayArrowIcon color="action" sx={iconsStyle} />
+                                            </Tooltip>
+                                        </IconButton>
+                                    )
+                            }
                             <IconButton>
                                 <Tooltip title="Eliminar lista de reproducción">
                                     <DeleteIcon color="error" sx={iconsStyle} />
