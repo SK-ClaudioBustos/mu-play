@@ -1,0 +1,46 @@
+.pilar {
+    overflow: hidden;
+    position: relative;
+    transition: .5s;
+}
+
+.pilar::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    background: #CCFFEB;
+    transition: height .4s ease;
+}
+
+.littleBox:hover .pilar:nth-child(even)::after {
+    animation: grow .4s linear .3s normal both;
+}
+
+.littleBox:hover .pilar:nth-child(odd)::after {
+    animation: grow .6s linear .1s normal both;
+}
+
+@keyframes grow {
+    0% {
+        height: 0%;
+    }
+
+    100% {
+        height: 85%;
+    }
+}
+
+.littleBox .pilar::after {
+    animation: grow-reverse .5s ease forwards;
+}
+
+@keyframes grow-reverse {
+    0% {
+        height: 85%;
+    }
+
+    100% {
+        height: 0%;
+    }
+}

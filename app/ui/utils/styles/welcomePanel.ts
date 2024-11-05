@@ -1,19 +1,24 @@
-import { color5 } from "./colors";
+import { color3 } from "./colors";
 
 const wpStyle = {
     container: {
-        marginTop: "35px",
-        marginBottom: "35px",
         display: "flex",
-        justifyContent: "left",
-        alignItems: "center",
+        justifyContent: "center",
+        alignItems: "center"
     },
-    title: {
-        color: color5,
-        textDecoration: "underline"
+    box: {
+        display: "flex",
+        flexDirection: "column"
     },
-    body: {
-        color: color5,
+    littleBox: {
+        backgroundColor: color3,
+        borderRadius: "10px",
+        width: "60vw",
+        height: "20vh",
+        display: "flex",
+        flexDirection: "row",
+        gap: "5%",
+        padding: "1vw"
     }
 }
 
